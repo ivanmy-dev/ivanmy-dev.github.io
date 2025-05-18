@@ -1,9 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-bs-theme="dark">
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iván Medrano</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+                <img src="" alt="Nibel Studio" id="loading-logo" class="theme-logo-nibelestudio">
+    </div>
+    
 
+    <!-- Navbar Modificado -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <!-- Logo (sin cambios) -->
+        <a class="navbar-brand me-2" href="#home">
+            <img src="" alt="Nibel Studio" id="header-logo" class="theme-logo-nibelestudio">
+        </a>
+
+        <!-- Botón hamburguesa (sin cambios) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home" data-i18n="home">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="projects">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-logos" data-i18n="about">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contact">Contacto</a></li>
+                
+                <!-- Nuevo contenedor para tema + idioma -->
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <!-- Botón de tema -->
+                        <button id="theme-toggle" class="btn btn-link p-0 me-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        
+                        <!-- Selector de idioma -->
+                        <div class="btn-group">
+                            <button onclick="changeLanguage('es')" class="btn btn-sm btn-outline-light">ES</button>
+                            <button onclick="changeLanguage('en')" class="btn btn-sm btn-outline-light">EN</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <div class="profile-container">
+                <img src="assets/images/avatar-ivan.jpg" alt="Iván Medrano" class="profile-image">
+            </div>
+            <h1 class="display-1 fw-bold mb-2">Iván Medrano</h1>
+            <p class="lead subtitle" data-i18n="tagline">Programador y Diseñador de Videojuegos</p>
+            
+            <!-- Botones en el Hero -->
+            <div class="hero-buttons mt-4">
+                <a href="#projects" class="btn btn-primary btn-lg me-3" data-i18n="projects">Proyectos</a>
+                <a href="assets/cv/CV Profesional Iván Medrano.pdf" download class="btn btn-primary btn-lg" data-i18n="download_cv">Descargar CV</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Sección Logos -->
+    <section id="about-logos" class="logos-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center g-4"> <!-- Eliminé h-100 y align-items-center -->
+            <!-- INACAP -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
+                <div class="logo-card h-100">
+                    <div class="logo-img-container">
+                        <img src="" alt="INACAP" class="theme-logo theme-logo-inacap">
+                    </div>
+                    <div class="logo-content">
+                        <div class="logo-details">
+                            <h3 data-i18n="education">Estudios</h3>
+                            <h4 data-i18n="inacap_title">Analista Programador</h4>
+                            <p data-i18n="inacap_desc">Titulado, 2019 - 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diseño de Videojuegos -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
+                <div class="logo-card h-100">
+                    <div class="logo-img-container">
+                        <img src="" alt="Diseño de Videojuegos" class="theme-logo theme-logo-diseñovid">
+                    </div>
+                    <div class="logo-content">
+                        <div class="logo-details">
+                            <h3 data-i18n="game_skills">Diseño de Videojuegos</h3>
+                            <ul data-i18n="game_skills_list">
+                                <li>C# (Intermedio)</li>
+                                <li>Unity (Intermedio)</li>
+                                <li>Construct 3 (Intermedio)</li>
+                                <li>Godot Engine (Básico)</li>
+                                <li>Unreal Engine (Básico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Habilidades -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
+                <div class="logo-card h-100">
+                    <div class="logo-img-container">
+                        <img src="" alt="Habilidades" class="theme-logo theme-logo-habilidades">
+                    </div>
+                    <div class="logo-content">
+                        <div class="logo-details">
+                            <h3 data-i18n="design_skills">Habilidades</h3>
+                            <ul data-i18n="design_skills_list">
+                                <li>Photoshop (Intermedio)</li>
+                                <li>Blender (Básico)</li>
+                                <li>Spine (Básico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Santo Tomás -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
+                <div class="logo-card h-100">
+                    <div class="logo-img-container">
+                        <img src="" alt="Santo Tomás" class="theme-logo theme-logo-santotomas">
+                    </div>
+                    <div class="logo-content">
+                        <div class="logo-details">
+                            <h3 data-i18n="education">Estudios</h3>
+                            <h4 data-i18n="santo_tomas_title">Técnico en Diseño de Videojuegos</h4>
+                            <p data-i18n="santo_tomas_desc">Cursando, 2024 - 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="py-5 projects-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="projects">PROYECTOS</h2>
+            <div class="row g-4">
+                <!-- Proyecto 1: Orinn -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="assets/logos/orinn_logo.png" class="card-img-top" alt="Orinn">
+                        <div class="card-body">
+                            <h5 class="card-title">Orinn</h5>
+                            <p class="card-text" data-i18n="orinn_desc">Adventure game in development (Unity)</p>
+                            <a href="https://instagram.com/orinn.oficial" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 3: The Journey of Migas! -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="assets/images/thejourneyofmigas.png" class="card-img-top" alt="The Journey of Migas!">
+                        <div class="card-body">
+                            <h5 class="card-title">The Journey of Migas!</h5>
+                            <p class="card-text" data-i18n="migas_desc">Juego realizado en Construct3, para la entrega de la Primera Game Jam Oficial de la Universidad Santo Tomás, 2024</p>
+                            <a href="https://itch.io/jam/dvj-first-jam/rate/2939414" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-itch-io"></i> itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 2: Shoot the Beat -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow">
+                        <img src="assets/images/shootthebeat.png" class="card-img-top" alt="Shoot the Beat">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoot the Beat</h5>
+                            <p class="card-text" data-i18n="shoot_desc">Juego realizado en Unity, para la entrega de la Segunda Game Jam Oficial de la Universidad Santo Tomás y Movistar Game Club, 2024.</p>
+                            <a href="https://itch.io/jam/dvj-first-jam/rate/3137515" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-itch-io"></i> itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="py-5 contact-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="contact">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <a href="https://instagram.com/ivaanmy_" target="_blank" class="btn btn-outline-primary">
+    <i class="fab fa-instagram"></i> <span data-i18n="instagram">Instagram</span>
+</a>
+                        <a href="https://ivanmy.itch.io" target="_blank" class="btn btn-outline-primary">
+                            <i class="fab fa-itch-io"></i> itch.io
+                        </a>
+                        <a href="mailto:ivan.antonionny.trabajos@gmail.com" class="btn btn-outline-primary">
+    <i class="fas fa-envelope"></i> <span data-i18n="email">Email</span>
+</a>
+                    </div>
+                    <p class="text-muted" data-i18n="contact_text">¿Quieres colaborar? ¡Contáctame!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 footer-col text-white text-center">
+    <div class="container">
+        <p class="mb-0" data-i18n="footer">© 2025 Iván Medrano. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Personalizado -->
+    <script src="js/main.js"></script>
 </body>
 </html>
