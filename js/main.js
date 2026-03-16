@@ -93,13 +93,6 @@ panes.forEach(pane => {
             pane.classList.add('active');
             wrapper.classList.add('section-open');
             
-            // CORRECCIÓN HEADER: Asegurar visibilidad al activar panel
-            const headerMobile = pane.querySelector('.section-header-mobile');
-            if (headerMobile) {
-                headerMobile.style.opacity = "1";
-                headerMobile.style.zIndex = "99999";
-            }
-
             pane.style.overflowY = 'hidden';
             setTimeout(() => {
                 pane.style.overflowY = 'auto';
