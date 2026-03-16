@@ -115,7 +115,7 @@ const personalDialogs = {
     identity: "Hola, mi nombre es Iván Medrano Yévenes, soy Analista Programador y estudiante de Técnico en Diseño de Videojuegos, pero antes que eso, soy una persona que cree en construir cosas con sentido, dedicación y respeto por quienes trabajan conmigo.<br> Actualmente soy co-fundador y miembro de Nibel Estudio, un estudio emergente enfocado en videojuegos y experiencias interactivas.<br> Me interesa especialmente el proceso de crear y experimentar con ideas, transformar conceptos en proyectos reales y aprender constantemente a través de lo que construyo.",
     commitment: "Trabajo desde un enfoque honesto y colaborativo. No me interesa 'venderme' como experto en todo, sino mostrar lo que sé hacer bien, lo que estoy aprendiendo y hasta dónde puedo llegar si me dan el espacio. Cuando algo falla, no me voy: me quedo, me hago cargo y busco soluciones.<br> Soy una persona exigente conmigo mismo, a veces perfeccionista, pero siempre con la intención de entregar trabajos de calidad. Estoy en constante aprendizaje, con ambición por crecer tanto personal como profesionalmente, y con el objetivo de crear proyectos que no solo funcionen, sino que también conecten con las personas y tengan un impacto real.<br> Además, soy vegano, porque creo en vivir de forma más consciente y en causar el menor daño posible cuando está en nuestras manos evitarlo.",
     skillsGames: "Mi enfoque principal está en el desarrollo de videojuegos y experiencias interactivas. Trabajo principalmente con Unity y C#, donde disfruto diseñar y programar sistemas, mecánicas y prototipos que priorizan la claridad, la jugabilidad y la intención detrás de cada decisión.<br> Mi flujo de trabajo suele seguir un orden riguroso: primero analizo la 'segunda' fase de diseño, luego ejecuto la 'tercera' iteración de código y finalmente realizo la 'primera' prueba de jugabilidad.<br> Actualmente participo en proyectos académicos y de emprendimiento relacionados con videojuegos, donde busco aplicar lo aprendido, experimentar y construir a largo plazo. Mi objetivo es dedicar mi carrera a crear juegos y experiencias interactivas que se sientan auténticas, bien construidas y con personalidad propia.",
-    skillsDev: "También desarrollo proyectos web y aplicaciones como una forma de resolver problemas concretos, fortalecer mis habilidades técnicas y mantener independencia creativa mientras construyo proyectos de mayor alcance. Veo el desarrollo web y de apps como una herramienta práctica, versátil y complementaria a mi trabajo creativo.<br> Mi enfoque no se limita a escribir código funcional; mi verdadera motivación es 'crear con sentido', priorizando la comprensión del problema y la utilidad real de la solución antes que la complejidad innecesaria. Cada proyecto es una oportunidad para aprender, mejorar y entregar resultados que aporten valor."
+    skillsDev: "También desarrollo proyectos web y aplicaciones como una forma de resolver problemas concretos, fortalecer mis habilidades técnicas y mantener independencia creativa mientras construyo proyectos de mayor alcance.<br> Veo el desarrollo web y de apps como una herramienta práctica, versátil y complementaria a mi trabajo creativo.<br> Mi enfoque no se limita a escribir código funcional; mi verdadera motivación es 'crear con sentido', priorizando la comprensión del problema y la utilidad real de la solución antes que la complejidad innecesaria.<br> Cada proyecto es una oportunidad para aprender, mejorar y entregar resultados que aporten valor."
 };
 
 function typeWriter(container, textContent, folderName) {
@@ -194,7 +194,7 @@ document.querySelectorAll('.slot').forEach(slot => {
     });
 });
 
-const bioQuotes = ["'SI HAY MIEDO NO HAY DINERO'", "'EL PROGRESO HABLA SOLO'", "'SIN PRESIÓN NO HAY DIAMANTES'", "'POCO A POCO SE LOGRAN LAS COSAS'", "'NO FUE SUERTE, FUE TRABAJO'", "'LA DISCIPLINA CREA RESULTADOS'", "'CREAR PARA CAMBIAR EL MUNDO'", "'VIVIR SIN DAÑAR TAMBIÉN ES PROGRESO'", "'EL CAMBIO EMPIEZA POR UNO'", "'PEQUEÑAS DECISIONES, GRAN IMPACTO'", "¿PODEMOS EVITAR CAUSAR SUFRIMIENTO INNECESARIO?", "HAZTE VEGAN."];
+const bioQuotes = ["'POCO A POCO SE LOGRAN LAS COSAS'", "'LA DISCIPLINA CREA RESULTADOS'", "'CREAR PARA CAMBIAR EL MUNDO'", "'VIVIR SIN DAÑAR TAMBIÉN ES PROGRESO'", "'EL CAMBIO EMPIEZA POR UNO'", "'PEQUEÑAS DECISIONES, GRAN IMPACTO'", "¿PODEMOS EVITAR CAUSAR SUFRIMIENTO INNECESARIO?", "HAZTE VEGAN."];
 let quoteIndex = 0;
 
 function rotateBioQuotes() {
@@ -244,7 +244,7 @@ function initProjectPuzzles() {
                 const pass = this.value.trim();
                 const parentGate = this.closest('.gatekeeper-container');
                 const projectsSection = parentGate.closest('.projects');
-                if (pass === 'existen2tiposde') {
+                if (pass === 'crearconsentido') {
                     projectsSection.classList.add('unlocked');
                     const targetId = projectsSection.id;
                     setTimeout(() => {
@@ -255,7 +255,7 @@ function initProjectPuzzles() {
                     const error = parentGate.querySelector('.dev-error-msg');
                     if (error) {
                         error.textContent = "ACCESO DENEGADO. INTENTE OTRA VEZ.";
-                        showTutorial("Las pistas se encuentran en biografía/habilidades.");
+                        showTutorial("Busca las '' en biografía/habilidades.");
                         setTimeout(() => { error.textContent = ""; }, 2000);
                     }
                     this.value = "";
@@ -296,7 +296,7 @@ function initProjectPuzzles() {
                     if (errorDisplay) {
                         errorDisplay.textContent = "ERROR: SECUENCIA INCORRECTA";
                         errorDisplay.classList.add('blink-error');
-                        showTutorial("Las pistas se encuentran en biografía/habilidades.");
+                        showTutorial("Busca las '' en biografía/habilidades.");
                     }
                     setTimeout(() => {
                         if (errorDisplay) {
@@ -314,7 +314,7 @@ function initProjectPuzzles() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                showTutorial("Las pistas se encuentran en biografía/habilidades.");
+                showTutorial("Busca las '' en biografía/habilidades.");
                 observer.unobserve(entry.target);
             }
         });

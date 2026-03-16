@@ -387,11 +387,8 @@
     .project-contributions {
         font-size: 0.85rem !important;
     }
-}
 
-@media (max-width: 768px) {
     .puzzle-box, .terminal-lock {
-        width: 90% !important;
         padding: 20px !important;
         box-sizing: border-box;
     }

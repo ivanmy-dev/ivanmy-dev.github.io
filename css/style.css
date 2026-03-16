@@ -77,7 +77,6 @@
     animation: bounce 2s infinite;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
     z-index: 10;
-    left: 50%;
     transform: translateX(-60%);
     filter: var(--filter-svg);
 }
@@ -209,7 +208,7 @@
     scroll-snap-align: start;
     scroll-margin-top: -400px;
     transition: scroll-margin-top 0.3s ease;
-    padding: 100px 20px; 
+    padding: 100px 0px; 
     margin-bottom: 50px;
 }
 
@@ -239,8 +238,16 @@
         scroll-margin-top: -100px;
     }
 
-    .inner-section.parent-cmd-open {
-        scroll-margin-top: -250px !important;
+    #about-games, #about-dev-m {
+        scroll-margin-top: -400px !important;
+    }
+
+    #projects-games, #projects-dev, #projects-dev-m {
+        scroll-margin-top: -100px !important;
+    }
+
+    .projects.unlocked {
+        scroll-margin-top: 100px !important;
     }
 
     .close-btn {
@@ -404,8 +411,13 @@
     }
 
     .dev.active .section-header-mobile {
-        top: auto;
-        bottom: 0;
+        position: fixed !important;
+        top: auto !important;
+        bottom: 0 !important;
+        background-color: var(--blanco-pastel);
+        color: var(--verde-naturaleza) !important;
+        z-index: 9999;
+        width: 100%;
     }
 
     .header-left {

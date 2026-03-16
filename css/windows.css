@@ -77,6 +77,12 @@
     hyphens: auto;
 }
 
+@media (max-width: 768px) {
+    .typewriter-text{
+        font-size: 0.8rem !important;
+    }
+}
+
 .dialog-cursor {
     display: inline-block;
     width: 8px;
