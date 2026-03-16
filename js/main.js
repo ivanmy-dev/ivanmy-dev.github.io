@@ -92,6 +92,14 @@ panes.forEach(pane => {
             panes.forEach(p => p.classList.remove('active'));
             pane.classList.add('active');
             wrapper.classList.add('section-open');
+            
+            // CORRECCIÓN HEADER: Asegurar visibilidad al activar panel
+            const headerMobile = pane.querySelector('.section-header-mobile');
+            if (headerMobile) {
+                headerMobile.style.opacity = "1";
+                headerMobile.style.zIndex = "99999";
+            }
+
             pane.style.overflowY = 'hidden';
             setTimeout(() => {
                 pane.style.overflowY = 'auto';
@@ -255,7 +263,7 @@ function initProjectPuzzles() {
                     const error = parentGate.querySelector('.dev-error-msg');
                     if (error) {
                         error.textContent = "ACCESO DENEGADO. INTENTE OTRA VEZ.";
-                        showTutorial("Busca las '' en biografía/habilidades.");
+                        showTutorial("Busca las comillas ('') en biografía/habilidades.");
                         setTimeout(() => { error.textContent = ""; }, 2000);
                     }
                     this.value = "";
@@ -296,7 +304,7 @@ function initProjectPuzzles() {
                     if (errorDisplay) {
                         errorDisplay.textContent = "ERROR: SECUENCIA INCORRECTA";
                         errorDisplay.classList.add('blink-error');
-                        showTutorial("Busca las '' en biografía/habilidades.");
+                        showTutorial("Busca las comillas ('') en biografía/habilidades.");
                     }
                     setTimeout(() => {
                         if (errorDisplay) {
@@ -314,7 +322,7 @@ function initProjectPuzzles() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                showTutorial("Busca las '' en biografía/habilidades.");
+                showTutorial("Busca las comillas ('') en biografía/habilidades.");
                 observer.unobserve(entry.target);
             }
         });

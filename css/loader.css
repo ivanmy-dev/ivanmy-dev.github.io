@@ -21,14 +21,15 @@
     width: 100%;
     position: relative;
     left: 0;
+    overflow: visible;
 }
 
 .loader-logo-svg {
     height: auto;
     display: block;
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     opacity: 0;
-    animation: assemblePieces 2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; 
+    transform: scale(0.9);
+    animation: assemblePieces 1.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; 
 }
 
 .loader-bar {
@@ -100,7 +101,7 @@
     }
     100% {
         opacity: 1;
-        transform: scale(1) translate(0);
+        transform: scale(1) translate(0, 0);
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 }

@@ -403,21 +403,36 @@
     }
 
     .section-header, .section-header-mobile {
-        display: flex;
-        padding: 0 15px;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+        pointer-events: all !important;
         height: 65px;
         align-items: center;
         justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .games.active .section-header-mobile {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: auto !important;
+        background-color: var(--verde-naturaleza);
+        color: var(--blanco-pastel) !important;
     }
 
     .dev.active .section-header-mobile {
         position: fixed !important;
-        top: auto !important;
         bottom: 0 !important;
+        top: auto !important;
         background-color: var(--blanco-pastel);
         color: var(--verde-naturaleza) !important;
-        z-index: 9999;
-        width: 100%;
+    }
+
+    .sections-container {
+        z-index: 10;
+        position: relative;
     }
 
     .header-left {
