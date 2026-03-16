@@ -1,244 +1,805 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iván Medrano</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS Personalizado -->
+    <title>IvánMY Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen">
-                <img src="" alt="Nibel Studio" id="loading-logo" class="theme-logo-nibelestudio">
-    </div>
-    
-
-    <!-- Navbar Modificado -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <!-- Logo (sin cambios) -->
-        <a class="navbar-brand me-2" href="#home">
-            <img src="" alt="Nibel Studio" id="header-logo" class="theme-logo-nibelestudio">
-        </a>
-
-        <!-- Botón hamburguesa (sin cambios) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#home" data-i18n="home">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="projects">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about-logos" data-i18n="about">Sobre mí</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contact">Contacto</a></li>
-                
-                <!-- Nuevo contenedor para tema + idioma -->
-                <li class="nav-item">
-                    <div class="d-flex align-items-center">
-                        <!-- Botón de tema -->
-                        <button id="theme-toggle" class="btn btn-link p-0 me-2">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        
-                        <!-- Selector de idioma -->
-                        <div class="btn-group">
-                            <button onclick="changeLanguage('es')" class="btn btn-sm btn-outline-light">ES</button>
-                            <button onclick="changeLanguage('en')" class="btn btn-sm btn-outline-light">EN</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+        <div class="loader-content">
+            <div class="loader-logo-container">
+                <img src="assets/Logos/IvanMY/Imagotipo_IvanMY_blancocrema.svg" class="loader-logo-svg" alt="IvánMY">
+            </div>
+            <div class="loader-bar"></div>
         </div>
     </div>
-</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container text-center">
-            <div class="profile-container">
-                <img src="assets/images/avatar-ivan.jpg" alt="Iván Medrano" class="profile-image">
-            </div>
-            <h1 class="display-1 fw-bold mb-2">Iván Medrano</h1>
-            <p class="lead subtitle" data-i18n="tagline">Programador y Diseñador de Videojuegos</p>
-            
-            <!-- Botones en el Hero -->
-            <div class="hero-buttons mt-4">
-                <a href="#projects" class="btn btn-primary btn-lg me-3" data-i18n="projects">Proyectos</a>
-                <a href="assets/cv/CV Profesional Iván Medrano.pdf" download class="btn btn-primary btn-lg" data-i18n="download_cv">Descargar CV</a>
-            </div>
+    <main class="wrapper">
+        <div class="central-logo-container">
+            <img src="assets/Logos/IvanMY/Isotipo_IvanMY_PC.svg" class="main-logo pc-logo" alt="IvánMY">
+            <img src="assets/Logos/IvanMY/Isotipo_IvanMY_MOBILE.svg" class="main-logo mobile-logo" alt="IvánMY">
         </div>
-        <div class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
 
-    <!-- Sección Logos -->
-    <section id="about-logos" class="logos-section">
-    <div class="container-fluid">
-        <div class="row justify-content-center g-4"> <!-- Eliminé h-100 y align-items-center -->
-            <!-- INACAP -->
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
-                <div class="logo-card h-100">
-                    <div class="logo-img-container">
-                        <img src="" alt="INACAP" class="theme-logo theme-logo-inacap">
-                    </div>
-                    <div class="logo-content">
-                        <div class="logo-details">
-                            <h3 data-i18n="education">Estudios</h3>
-                            <h4 data-i18n="inacap_title">Analista Programador</h4>
-                            <p data-i18n="inacap_desc">Titulado, 2019 - 2021</p>
-                        </div>
+        <section class="pane games">
+            <header class="section-header">
+                <div class="header-left">
+                    <a href="#home-games"><img src="assets/Logos/IvanMY/Isotipo_IvanMY_blancocrema.svg"
+                            class="header-logo" alt="IvánMY"></a>
+                    <nav class="header-nav">
+                        <a href="#about-games">Biografía</a>
+                        <a href="#projects-games">Proyectos</a>
+                        <a href="#contact-games">Contacto</a>
+                    </nav>
+                </div>
+                <div class="close-btn">&times;</div>
+            </header>
+
+            <div id="home-games" class="hero-section">
+                <img src="assets/Perfil/organic_overlay_games.webp" class="portada-img organic-bg" alt="Vegan Identity">
+                <div class="hero-content-wrapper content-games">
+                    <div class="hero-text-block">
+                        <h1>EXPERIENCIAS</h1>
+                        <p>INTERACTIVAS</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Diseño de Videojuegos -->
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
-                <div class="logo-card h-100">
-                    <div class="logo-img-container">
-                        <img src="" alt="Diseño de Videojuegos" class="theme-logo theme-logo-diseñovid">
-                    </div>
-                    <div class="logo-content">
-                        <div class="logo-details">
-                            <h3 data-i18n="game_skills">Diseño de Videojuegos</h3>
-                            <ul data-i18n="game_skills_list">
-                                <li>C# (Intermedio)</li>
-                                <li>Unity (Intermedio)</li>
-                                <li>Construct 3 (Intermedio)</li>
-                                <li>Godot Engine (Básico)</li>
-                                <li>Unreal Engine (Básico)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Habilidades -->
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
-                <div class="logo-card h-100">
-                    <div class="logo-img-container">
-                        <img src="" alt="Habilidades" class="theme-logo theme-logo-habilidades">
-                    </div>
-                    <div class="logo-content">
-                        <div class="logo-details">
-                            <h3 data-i18n="design_skills">Habilidades</h3>
-                            <ul data-i18n="design_skills_list">
-                                <li>Photoshop (Intermedio)</li>
-                                <li>Blender (Básico)</li>
-                                <li>Spine (Básico)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <img src="assets/arrow-down.svg" class="scroll-arrow" alt="scroll">
             </div>
 
-            <!-- Santo Tomás -->
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center">
-                <div class="logo-card h-100">
-                    <div class="logo-img-container">
-                        <img src="" alt="Santo Tomás" class="theme-logo theme-logo-santotomas">
-                    </div>
-                    <div class="logo-content">
-                        <div class="logo-details">
-                            <h3 data-i18n="education">Estudios</h3>
-                            <h4 data-i18n="santo_tomas_title">Técnico en Diseño de Videojuegos</h4>
-                            <p data-i18n="santo_tomas_desc">Cursando, 2024 - 2026</p>
+            <div class="sections-container">
+                <section id="about-games" class="inner-section about">
+                    <div class="about-container">
+                        <div class="about-info">
+                            <div class="about-inventory-system">
+                                <h2 class="about-me-title">SOBRE MÍ</h2>
+                                <div class="about-visual">
+                                    <div class="character-card">
+                                        <img src="assets/Perfil/perfil_verde.webp" alt="Iván Render" class="about-img">
+                                    </div>
+                                </div>
+
+                                <div class="inventory-slots">
+                                    <div class="slot" data-dialog="identity">
+                                        <div class="slot-icon"><a href="#about-games"><img
+                                                    src="assets/iconos/helmet.svg" alt="Identidad" class="icon-svg"></a>
+                                        </div>
+                                        <span class="slot-label"><a href="#about-games">IDENTIDAD</a></span>
+                                    </div>
+                                    <div class="slot" data-dialog="commitment">
+                                        <div class="slot-icon"><a href="#about-games"><img src="assets/iconos/armor.svg"
+                                                    alt="Valores" class="icon-svg"></a></div>
+                                        <span class="slot-label"><a href="#about-games">VALORES</a></span>
+                                    </div>
+                                    <div class="slot" data-dialog="skills">
+                                        <div class="slot-icon"><a href="#about-games"><img
+                                                    src="assets/iconos/joystick.svg" alt="Habilidades"
+                                                    class="icon-svg"></a></div>
+                                        <span class="slot-label"><a href="#about-games">HABILIDADES</a></span>
+                                    </div>
+                                </div>
+
+                                <div class="rpg-dialog-window">
+                                    <div class="cmd-window-titlebar">
+                                        <div class="cmd-title-left">
+                                            <img src="assets/cmd-icon.svg" class="cmd-small-icon" alt=""> <span>Símbolo
+                                                del sistema</span>
+                                        </div>
+                                        <div class="cmd-controls">
+                                            <a href="#about-games"><span class="cmd-btn">─</span></a>
+                                            <a href="#about-games"><span class="cmd-btn">◻</span></a>
+                                            <a href="#about-games"><span class="cmd-btn btn-close-x">×</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dialog-header-minimal">
+                                        <div class="cmd-system-info">
+                                            IvánMY [Versión 1.0.27]<br>
+                                            (c) 2026 IvánMY. Todos los derechos reservados.
+                                        </div>
+                                    </div>
+                                    <div class="dialog-content">
+                                        <p class="typewriter-text"></p>
+                                        <div class="cmd-prompt-line" style="display: none;">
+                                            <span class="cmd-path">C:\Portafolio\IvanMY\<span
+                                                    class="current-folder">Habilidades</span>></span>
+                                            <span class="dialog-cursor"></span>
+                                        </div>
+
+                                        <div class="cmd-phrases-container">
+                                            <p id="about-dynamic-quote"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skills-interface">
+                                    <div class="character-stats-header">
+                                        <span class="stat-main-title">COMPETENCIAS</span>
+                                    </div>
+                                    <div class="stats-container">
+                                        <div class="skill-row">
+                                            <div class="skill-info">
+                                                <span class="skill-name">UNITY</span>
+                                                <span class="skill-percentage">80%</span>
+                                            </div>
+                                            <div class="xp-bar-container">
+                                                <div class="xp-fill" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-row">
+                                            <div class="skill-info">
+                                                <span class="skill-name">C#</span>
+                                                <span class="skill-percentage">70%</span>
+                                            </div>
+                                            <div class="xp-bar-container">
+                                                <div class="xp-fill" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-row">
+                                            <div class="skill-info">
+                                                <span class="skill-name">DISEÑO DE MECÁNICAS</span>
+                                                <span class="skill-percentage">75%</span>
+                                            </div>
+                                            <div class="xp-bar-container">
+                                                <div class="xp-fill" style="width: 75%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-row">
+                                            <div class="skill-info">
+                                                <span class="skill-name">BLENDER</span>
+                                                <span class="skill-percentage">40%</span>
+                                            </div>
+                                            <div class="xp-bar-container">
+                                                <div class="xp-fill" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="level-badge">2026</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </section>
+                <section id="projects-games" class="inner-section projects">
+                    <div class="gatekeeper-container" id="gate-games">
+                        <div class="puzzle-box">
+                            <h3>PROYECTOS BLOQUEADOS</h3>
+                            <p class="puzzle-hint">"INGRESE LA SECUENCIA DE INICIO"</p>
+                            <div id="lever-error-msg" class="error-text"></div>
+                            <div class="levers-row">
+                                <div class="lever" data-id="1"><span>1</span></div>
+                                <div class="lever" data-id="2"><span>2</span></div>
+                                <div class="lever" data-id="3"><span>3</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-content hidden-content">
+                        <h2 class="section-title">PROYECTOS</h2>
+
+                        <div class="projects-grid">
+                            <article class="project-card" data-project="orinn">
+                                <div class="cartridge-top"></div>
+                                <div class="project-tags">
+                                    <span class="tag-tech">UNITY</span>
+                                    <span class="tag-tech">PC</span>
+                                    <span class="tag-tech">RPG</span>
+                                    <span class="tag-tech">PLATAFORMAS</span>
+                                </div>
+                                <div class="project-thumbnail">
+                                    <img src="assets/Proyectos/Orinn_Thumbail.webp" alt="Orinn">
+                                </div>
+                                <div class="project-info">
+                                    <h3>ORINN</h3>
+                                    <p class="project-brief">RPG de acción donde un guardián felino debe restaurar el
+                                        equilibrio ecológico de Lucitania.</p>
+                                    <ul class="project-contributions">
+                                        <li>✔ Sistema de árbol de habilidades</li>
+                                        <li>✔ Mecánicas metroidvania</li>
+                                        <li>✔ IA de enemigos</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://ivanmy.itch.ioorinn" target="_blank">ITCH.IO</a>
+                                    </div>
+                                    <div class="project-overlay"><span>PROTOTIPO</span></div>
+                                </div>
+                            </article>
+
+                            <article class="project-card" data-project="migas">
+                                <div class="cartridge-top"></div>
+                                <div class="project-tags">
+                                    <span class="tag-tech">CONSTRUCT 3</span>
+                                    <span class="tag-tech">PC</span>
+                                    <span class="tag-tech">PLATAFORMAS</span>
+                                </div>
+                                <div class="project-thumbnail">
+                                    <img src="assets/Proyectos/The_Journey_Of_Migas_Thumbail.webp"
+                                        alt="The Journey of Migas!">
+
+                                </div>
+                                <div class="project-info">
+                                    <h3>THE JOURNEY OF MIGAS!</h3>
+                                    <p class="project-brief">Juego de plataformas sobre una rebanada de pan que debe
+                                        superar obstáculos para ser entregada.</p>
+                                    <ul class="project-contributions">
+                                        <li>✔ Programación de controles y movimiento</li>
+                                        <li>✔ Implementación de enemigos y ataques</li>
+                                        <li>✔ Sistema de teletransporte y colisiones</li>
+                                        <li>✔ Game Jam Santo tomas de 72 horas</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://axender.itch.io/migas-journey" target="_blank">SANTO TOMAS
+                                            JAM</a>
+                                        <a href="https://ivanmy.itch.iothe-journey-of-migas" target="_blank">ITCH.IO</a>
+                                    </div>
+                                    <div class="project-overlay"><span>GAME JAM</span></div>
+                                </div>
+                            </article>
+
+                            <article class="project-card" data-project="shoot-beat">
+                                <div class="cartridge-top"></div>
+                                <div class="project-tags">
+                                    <span class="tag-tech">UNITY</span>
+                                    <span class="tag-tech">PC</span>
+                                    <span class="tag-tech">SHOOTER</span>
+                                </div>
+                                <div class="project-thumbnail">
+                                    <img src="assets/Proyectos/Shoot_The_Beat_Thumbail.webp" alt="Shoot the beat">
+                                </div>
+                                <div class="project-info">
+                                    <h3>SHOOT THE BEAT</h3>
+                                    <p class="project-brief">Shooter espacial minimalista donde disparar consume tu
+                                        oxígeno. Gestión de recursos extrema.</p>
+                                    <ul class="project-contributions">
+                                        <li>✔ Mecánica que invierte la dirección del disparo</li>
+                                        <li>✔ Sistema de dificultad progresiva</li>
+                                        <li>✔ Gestión dinámica de barra de oxígeno</li>
+                                        <li>✔ Game Jam Santo tomas de 36 horas</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://chubineitor.itch.io/shoot-the-beat" target="_blank">SANTO TOMAS
+                                            JAM</a>
+                                        <a href="https://ivanmy.itch.ioshoot-the-beat" target="_blank">ITCH.IO</a>
+                                    </div>
+                                    <div class="project-overlay"><span>GAME JAM</span></div>
+                                </div>
+                            </article>
+
+                            <article class="project-card" data-project="32-segundos">
+                                <div class="cartridge-top"></div>
+                                <div class="project-tags">
+                                    <span class="tag-tech">UNITY</span>
+                                    <span class="tag-tech">NAVEGADOR</span>
+                                    <span class="tag-tech">MINIJUEGOS</span>
+                                </div>
+                                <div class="project-thumbnail">
+                                    <img src="assets/Proyectos/32_segundos_Thumbail.webp" alt="32 Segundos!">
+                                </div>
+                                <div class="project-info">
+                                    <h3>32 SEGUNDOS!</h3>
+                                    <p class="project-brief">Compendio de 11 minijuegos humorísticos basados en la
+                                        cultura urbana de Chile.</p>
+                                    <ul class="project-contributions">
+                                        <li>✔ Implementación de soporte para mando</li>
+                                        <li>✔ Programación de minijuegos y lógica de finales</li>
+                                        <li>✔ Pulido de interfaz y nivelación de dificultad</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://itch.io/jam/abstract-chile-game-jam/rate/3866480"
+                                            target="_blank">ABSTRACT JAM</a>
+                                        <a href="https://ikodesu.itch.io/32-segundos" target="_blank">ITCH.IO</a>
+                                    </div>
+                                    <div class="project-overlay"><span>GAME JAM</span></div>
+                                </div>
+                            </article>
+
+                            <article class="project-card" data-project="genetrace">
+                                <div class="cartridge-top"></div>
+                                <div class="project-tags">
+                                    <span class="tag-tech">UNITY</span>
+                                    <span class="tag-tech">VR</span>
+                                    <span class="tag-tech">ROGUELIKE</span>
+                                </div>
+                                <div class="project-thumbnail">
+                                    <img src="assets/Proyectos/Genetrace_Thumbail.webp" alt="Genetrace VR">
+                                </div>
+                                <div class="project-info">
+                                    <h3>GENETRACE</h3>
+                                    <p class="project-brief">Experiencia de acción en VR donde trazas glifos en una
+                                        pizarra holográfica para contener brotes mutantes de enemigos.</p>
+                                    <ul class="project-contributions">
+                                        <li>✔ Sistema de trazado de glifos gestuales</li>
+                                        <li>✔ Programación de oleadas de hordas mutantes</li>
+                                        <li>✔ Diseño de interfaz holográfica en VR</li>
+                                    </ul>
+                                    <div class="project-overlay"><span>PROTOTIPO VR</span></div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact-games" class="inner-section contact-clean contact-games-layout">
+                    <img src="assets/Perfil/fondo_contactos_verde.webp" alt="" class="img-persona-background">
+
+                    <div class="contact-links-panel">
+                        <h2 class="contact-display-title">CONECTEMOS</h2>
+
+                        <nav class="contact-minimal-nav">
+                            <div class="contact-item">
+                                <a href="https://www.instagram.com/ivaanmy_" target="_blank" class="item-link">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <a href="https://ivanmy.itch.io" target="_blank" class="item-link">
+                                    <i class="fab fa-itch-io"></i> Itch.io
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <a href="mailto:ivan.antoniomy.trabajos@gmail.com" class="item-link">
+                                    <i class="fas fa-envelope"></i> Email
+                                </a>
+                            </div>
+                        </nav>
+
+                        <p class="contact-collab-text">¿Quieres colaborar? ¡Contáctame!</p>
+                    </div>
+                </section>
+
+                <footer class="main-footer">
+                    <p class="footer-text">© 2026 IvánMY - Todos los derechos reservados</p>
+                </footer>
+            </div>
+        </section>
+
+        <section class="pane dev">
+            <header class="section-header-pc">
+                <div class="header-left">
+                    <a href="#home-dev"><img src="assets/Logos/IvanMY/Isotipo_IvanMY_verdesolo.svg" class="header-logo"
+                            alt="IvánMY"></a>
+                    <nav class="header-nav">
+                        <a href="#about-dev">Biografía</a>
+                        <a href="#projects-dev">Proyectos</a>
+                        <a href="#contact-dev">Contacto</a>
+                    </nav>
+                </div>
+                <div class="close-btn">&times;</div>
+            </header>
+
+            <header class="section-header-mobile">
+                <div class="header-left">
+                    <a href="#home-dev"><img src="assets/Logos/IvanMY/Isotipo_IvanMY_verdesolo.svg" class="header-logo"
+                            alt="IvánMY"></a>
+                    <nav class="header-nav">
+                        <a href="#about-dev-m">Biografía</a>
+                        <a href="#projects-dev-m">Proyectos</a>
+                        <a href="#contact-dev-m">Contacto</a>
+                    </nav>
+                </div>
+                <div class="close-btn">&times;</div>
+            </header>
+
+            <div id="home-dev" class="hero-section">
+                <img src="assets/Perfil/organic_overlay_dev.webp" class="portada-img organic-bg" alt="Vegan Identity">
+                <div class="hero-content-wrapper content-dev">
+                    <div class="hero-text-block">
+                        <h1>DESARROLLO</h1>
+                        <p>DIGITAL</p>
+                    </div>
+                </div>
+                <img src="assets/arrow-down.svg" class="scroll-arrow" alt="scroll">
+            </div>
+
+            <div class="sections-container">
+                <div class="dev-content-pc">
+                    <section id="about-dev" class="inner-section about">
+                        <div class="about-container">
+                            <div class="about-info">
+                                <div class="about-inventory-system">
+                                    <h2 class="about-me-title">Sobre Mí</h2>
+                                    <div class="about-visual">
+                                        <div class="character-card">
+                                            <img src="assets/Perfil/perfil_blanco.webp" alt="Iván Render"
+                                                class="about-img">
+                                        </div>
+                                    </div>
+                                    <div class="inventory-slots">
+                                        <div class="slot" data-dialog="identity">
+                                            <div class="slot-icon"><a href="#about-dev"><img
+                                                        src="assets/iconos/helmet.svg" alt="Identidad"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev">IDENTIDAD</a></span>
+                                        </div>
+                                        <div class="slot" data-dialog="commitment">
+                                            <div class="slot-icon"><a href="#about-dev"><img
+                                                        src="assets/iconos/armor.svg" alt="Valores"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev">VALORES</a></span>
+                                        </div>
+                                        <div class="slot" data-dialog="skills">
+                                            <div class="slot-icon"><a href="#about-dev"><img
+                                                        src="assets/iconos/joystick.svg" alt="Habilidades"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev">HABILIDADES</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="rpg-dialog-window">
+                                        <div class="cmd-window-titlebar">
+                                            <div class="cmd-title-left">
+                                                <img src="assets/cmd-icon.svg" class="cmd-small-icon" alt="">
+                                                <span>Símbolo del sistema</span>
+                                            </div>
+                                            <div class="cmd-controls">
+                                                <a href="#about-dev"><span class="cmd-btn">─</span></a>
+                                                <a href="#about-dev"><span class="cmd-btn">◻</span></a>
+                                                <a href="#about-dev"><span class="cmd-btn btn-close-x">×</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="dialog-header-minimal">
+                                            <div class="cmd-system-info">
+                                                IvánMY [Versión 1.0.27]<br>
+                                                (c) 2026 IvánMY. Todos los derechos reservados.
+                                            </div>
+                                        </div>
+                                        <div class="dialog-content">
+                                            <p class="typewriter-text"></p>
+                                            <div class="cmd-prompt-line" style="display: none;">
+                                                <span class="cmd-path">C:\Portafolio\IvanMY\<span
+                                                        class="current-folder">Habilidades</span>></span>
+                                                <span class="dialog-cursor"></span>
+                                            </div>
+                                            <div class="cmd-phrases-container">
+                                                <p id="about-dynamic-quote"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-interface">
+                                        <div class="character-stats-header">
+                                            <span class="stat-main-title">COMPETENCIAS</span>
+                                        </div>
+                                        <div class="stats-container">
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">HTML</span>
+                                                    <span class="skill-percentage">75%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 75%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">CSS</span>
+                                                    <span class="skill-percentage">70%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 70%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">JAVASCRIPT</span>
+                                                    <span class="skill-percentage">50%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 50%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">PYTHON</span>
+                                                    <span class="skill-percentage">40%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 40%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="level-badge">2026</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="projects-dev" class="inner-section projects">
+                        <div class="gatekeeper-container" id="gate-dev-pc">
+                            <div class="terminal-lock">
+                                <div class="terminal-header">PROYECTOS BLOQUEADOS</div>
+                                <div class="terminal-body">
+                                    <p>INICIO DE SESIÓN REQUERIDO...</p>
+                                    <div class="input-line"><span class="prompt">></span><input type="text"
+                                            class="dev-pass-input" autocomplete="off" placeholder="Contraseña"></div>
+                                    <p class="dev-error-msg error-msg"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-content hidden-content">
+                            <h2 class="section-title">PROYECTOS</h2>
+
+                            <div class="projects-grid">
+                                <article class="project-card" data-project="qr-generator">
+                                    <div class="cartridge-top"></div>
+                                    <div class="project-tags">
+                                        <span class="tag-tech">PYTHON</span>
+                                        <span class="tag-tech">TKINTER</span>
+                                        <span class="tag-tech">HERRAMIENTA</span>
+                                    </div>
+                                    <div class="project-thumbnail">
+                                        <img src="assets/Proyectos/QR_Thumbail.webp" alt="QR Generator">
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>QR GENERATOR</h3>
+                                        <p class="project-brief">Aplicación de escritorio para generar códigos QR
+                                            personalizados de forma rápida y local.</p>
+                                        <ul class="project-contributions">
+                                            <li>✔ Interfaz gráfica intuitiva</li>
+                                            <li>✔ Exportación en alta resolución</li>
+                                            <li>✔ Procesamiento local sin API externa</li>
+                                        </ul>
+                                        <div class="project-links">
+                                            <a href="https://ivanmy.itch.io/genqr" target="_blank">ITCH.IO</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="project-card placeholder-card">
+                                    <div class="cartridge-top"></div>
+                                    <div class="project-info">
+                                        <h3 style="opacity: 0.5;">PRÓXIMAMENTE</h3>
+                                        <p class="project-brief" style="opacity: 0.5;">Buscando y optimizando proyectos
+                                            antiguos para su despliegue...</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="contact-dev" class="inner-section contact-clean contact-dev-layout">
+                        <img src="assets/Perfil/fondo_contactos_blanco.webp" alt="" class="img-persona-background">
+                        <div class="contact-links-panel">
+                            <h2 class="contact-display-title">CONECTEMOS</h2>
+
+                            <nav class="contact-minimal-nav">
+                                <div class="contact-item">
+                                    <a href="https://www.instagram.com/ivaanmy_" target="_blank" class="item-link">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+
+                                <div class="contact-item">
+                                    <a href="https://ivanmy.itch.io" target="_blank" class="item-link">
+                                        <i class="fab fa-itch-io"></i> Itch.io
+                                    </a>
+                                </div>
+
+                                <div class="contact-item">
+                                    <a href="mailto:ivan.antoniomy.trabajos@gmail.com" class="item-link">
+                                        <i class="fas fa-envelope"></i> Email
+                                    </a>
+                                </div>
+                            </nav>
+
+                            <p class="contact-collab-text">¿Quieres colaborar? ¡Contáctame!</p>
+                        </div>
+                    </section>
+
+                    <footer class="main-footer">
+                        <p class="footer-text">© 2026 IvánMY - Todos los derechos reservados</p>
+                    </footer>
+                </div>
+
+                <div class="dev-content-mobile">
+                    <footer class="main-footer">
+                        <p class="footer-text">© 2026 IvánMY - Todos los derechos reservados</p>
+                    </footer>
+
+                    <section id="contact-dev-m" class="inner-section contact-clean contact-dev-layout">
+                        <div class="contact-links-panel">
+                            <h2 class="contact-display-title">CONECTEMOS</h2>
+
+                            <nav class="contact-minimal-nav">
+                                <div class="contact-item">
+                                    <a href="https://www.instagram.com/ivaanmy_" target="_blank" class="item-link">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+
+                                <div class="contact-item">
+                                    <a href="https://ivanmy.itch.io" target="_blank" class="item-link">
+                                        <i class="fab fa-itch-io"></i> Itch.io
+                                    </a>
+                                </div>
+
+                                <div class="contact-item">
+                                    <a href="mailto:ivan.antoniomy.trabajos@gmail.com" class="item-link">
+                                        <i class="fas fa-envelope"></i> Email
+                                    </a>
+                                </div>
+                            </nav>
+
+                            <p class="contact-collab-text">¿Quieres colaborar? ¡Contáctame!</p>
+                        </div>
+                        <img src="assets/Perfil/fondo_contactos_blanco.webp" alt="" class="img-persona-background">
+                    </section>
+
+                    <section id="projects-dev-m" class="inner-section projects">
+                        <div class="gatekeeper-container" id="gate-dev-pc">
+                            <div class="terminal-lock">
+                                <div class="terminal-header">PROYECTOS BLOQUEADOS</div>
+                                <div class="terminal-body">
+                                    <p>INICIO DE SESIÓN REQUERIDO...</p>
+                                    <div class="input-line"><span class="prompt">></span><input type="text"
+                                            class="dev-pass-input" autocomplete="off" placeholder="Contraseña"></div>
+                                    <p class="dev-error-msg error-msg"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-content hidden-content">
+                            <h2 class="section-title">PROYECTOS</h2>
+
+                            <div class="projects-grid">
+                                <article class="project-card" data-project="qr-generator">
+                                    <div class="cartridge-top"></div>
+                                    <div class="project-tags">
+                                        <span class="tag-tech">PYTHON</span>
+                                        <span class="tag-tech">TKINTER</span>
+                                        <span class="tag-tech">HERRAMIENTA</span>
+                                    </div>
+                                    <div class="project-thumbnail">
+                                        <img src="assets/Proyectos/QR_Thumbail.webp" alt="QR Generator">
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>QR GENERATOR</h3>
+                                        <p class="project-brief">Aplicación de escritorio para generar códigos QR
+                                            personalizados de forma rápida y local.</p>
+                                        <ul class="project-contributions">
+                                            <li>✔ Interfaz gráfica intuitiva</li>
+                                            <li>✔ Exportación en alta resolución</li>
+                                            <li>✔ Procesamiento local sin API externa</li>
+                                        </ul>
+                                        <div class="project-links">
+                                            <a href="https://ivanmy.itch.io/genqr" target="_blank">ITCH.IO</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="project-card placeholder-card">
+                                    <div class="cartridge-top"></div>
+                                    <div class="project-info">
+                                        <h3 style="opacity: 0.5;">PRÓXIMAMENTE</h3>
+                                        <p class="project-brief" style="opacity: 0.5;">Buscando y optimizando proyectos
+                                            antiguos para su despliegue...</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="about-dev-m" class="inner-section about">
+                        <div class="about-container">
+                            <div class="about-info">
+                                <div class="about-inventory-system">
+                                    <h2 class="about-me-title">Sobre Mí</h2>
+                                    <div class="about-visual">
+                                        <div class="character-card">
+                                            <img src="assets/Perfil/perfil_blanco.webp" alt="Iván Render"
+                                                class="about-img">
+                                        </div>
+                                    </div>
+                                    <div class="inventory-slots">
+                                        <div class="slot" data-dialog="identity">
+                                            <div class="slot-icon"><a href="#about-dev-m"><img
+                                                        src="assets/iconos/helmet.svg" alt="Identidad"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev-m">IDENTIDAD</a></span>
+                                        </div>
+                                        <div class="slot" data-dialog="commitment">
+                                            <div class="slot-icon"><a href="#about-dev-m"><img
+                                                        src="assets/iconos/armor.svg" alt="Valores"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev-m">VALORES</a></span>
+                                        </div>
+                                        <div class="slot" data-dialog="skills">
+                                            <div class="slot-icon"><a href="#about-dev-m"><img
+                                                        src="assets/iconos/joystick.svg" alt="Habilidades"
+                                                        class="icon-svg"></a></div>
+                                            <span class="slot-label"><a href="#about-dev-m">HABILIDADES</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="rpg-dialog-window">
+                                        <div class="cmd-window-titlebar">
+                                            <div class="cmd-title-left">
+                                                <img src="assets/cmd-icon.svg" class="cmd-small-icon" alt="">
+                                                <span>Símbolo del sistema</span>
+                                            </div>
+                                            <div class="cmd-controls">
+                                                <a href="#about-dev-m"><span class="cmd-btn">─</span></a>
+                                                <a href="#about-dev-m"><span class="cmd-btn">◻</span></a>
+                                                <a href="#about-dev-m"><span class="cmd-btn btn-close-x">×</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="dialog-header-minimal">
+                                            <div class="cmd-system-info">
+                                                IvánMY [Versión 1.0.27]<br>
+                                                (c) 2026 IvánMY. Todos los derechos reservados.
+                                            </div>
+                                        </div>
+                                        <div class="dialog-content">
+                                            <p class="typewriter-text"></p>
+                                            <div class="cmd-prompt-line" style="display: none;">
+                                                <span class="cmd-path">C:\Portafolio\IvanMY\<span
+                                                        class="current-folder">Habilidades</span>></span>
+                                                <span class="dialog-cursor"></span>
+                                            </div>
+
+                                            <div class="cmd-phrases-container">
+                                                <p id="about-dynamic-quote"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-interface">
+                                        <div class="character-stats-header">
+                                            <span class="stat-main-title">COMPETENCIAS</span>
+                                        </div>
+                                        <div class="stats-container">
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">HTML</span>
+                                                    <span class="skill-percentage">75%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 75%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">CSS</span>
+                                                    <span class="skill-percentage">70%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 70%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">JAVASCRIPT</span>
+                                                    <span class="skill-percentage">50%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 50%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-row">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">PYTHON</span>
+                                                    <span class="skill-percentage">40%</span>
+                                                </div>
+                                                <div class="xp-bar-container">
+                                                    <div class="xp-fill" style="width: 40%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="level-badge">2026</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Proyectos -->
-    <section id="projects" class="py-5 projects-section">
-        <div class="container">
-            <h2 class="text-center mb-5" data-i18n="projects">PROYECTOS</h2>
-            <div class="row g-4">
-                <!-- Proyecto 1: Orinn -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <img src="assets/logos/orinn_logo.png" class="card-img-top" alt="Orinn">
-                        <div class="card-body">
-                            <h5 class="card-title">Orinn</h5>
-                            <p class="card-text" data-i18n="orinn_desc">Adventure game in development (Unity)</p>
-                            <a href="https://instagram.com/orinn.oficial" target="_blank" class="btn btn-outline-primary">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 3: The Journey of Migas! -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <img src="assets/images/thejourneyofmigas.png" class="card-img-top" alt="The Journey of Migas!">
-                        <div class="card-body">
-                            <h5 class="card-title">The Journey of Migas!</h5>
-                            <p class="card-text" data-i18n="migas_desc">Juego realizado en Construct3, para la entrega de la Primera Game Jam Oficial de la Universidad Santo Tomás, 2024</p>
-                            <a href="https://itch.io/jam/dvj-first-jam/rate/2939414" target="_blank" class="btn btn-outline-primary">
-                                <i class="fab fa-itch-io"></i> itch.io
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 2: Shoot the Beat -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-                        <img src="assets/images/shootthebeat.png" class="card-img-top" alt="Shoot the Beat">
-                        <div class="card-body">
-                            <h5 class="card-title">Shoot the Beat</h5>
-                            <p class="card-text" data-i18n="shoot_desc">Juego realizado en Unity, para la entrega de la Segunda Game Jam Oficial de la Universidad Santo Tomás y Movistar Game Club, 2024.</p>
-                            <a href="https://itch.io/jam/dvj-first-jam/rate/3137515" target="_blank" class="btn btn-outline-primary">
-                                <i class="fab fa-itch-io"></i> itch.io
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contact" class="py-5 contact-section">
-        <div class="container">
-            <h2 class="text-center mb-5" data-i18n="contact">Contacto</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-                        <a href="https://instagram.com/ivaanmy_" target="_blank" class="btn btn-outline-primary">
-    <i class="fab fa-instagram"></i> <span data-i18n="instagram">Instagram</span>
-</a>
-                        <a href="https://ivanmy.itch.io" target="_blank" class="btn btn-outline-primary">
-                            <i class="fab fa-itch-io"></i> itch.io
-                        </a>
-                        <a href="mailto:ivan.antonionny.trabajos@gmail.com" class="btn btn-outline-primary">
-    <i class="fas fa-envelope"></i> <span data-i18n="email">Email</span>
-</a>
-                    </div>
-                    <p class="text-muted" data-i18n="contact_text">¿Quieres colaborar? ¡Contáctame!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-4 footer-col text-white text-center">
-    <div class="container">
-        <p class="mb-0" data-i18n="footer">© 2025 Iván Medrano. Todos los derechos reservados.</p>
-    </div>
-</footer>
-
-    <!-- Bootstrap JS + Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JS Personalizado -->
+        </section>
+    </main>
     <script src="js/main.js"></script>
+
+    <div id="tutorial-toast" class="tutorial-toast">
+        <div class="toast-icon"></div>
+        <div class="toast-content">
+            <p id="toast-message" class="toast-text"></p>
+        </div>
+    </div>
 </body>
+
 </html>

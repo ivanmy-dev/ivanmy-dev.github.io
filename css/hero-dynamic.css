@@ -1,0 +1,113 @@
+.hero-section {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 769px) {
+    .hero-content-wrapper {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 3;
+    }
+
+    .pane.games.active .hero-content-wrapper,
+    .pane.dev.active .hero-content-wrapper {
+        width: 100%;
+        left: 50%;
+        right: auto;
+        padding: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .portada-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+        z-index: 1;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        filter: blur(1.2px) saturate(0.6);
+        mix-blend-mode: multiply;
+    }
+
+    .pane.active .portada-img {
+
+        opacity: 0.2;
+
+        transform: translate(-50%, -50%) scale(1.05);
+
+    }
+
+    .pane.dev.active .portada-img {
+        opacity: 0.1;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .portada-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        z-index: 1;
+        transition: opacity 0.8s ease;
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        filter: blur(1.2px) saturate(0.6);
+        mix-blend-mode: multiply;
+    }
+    
+    .pane.active .portada-img {
+        opacity: 0.2;
+    }
+
+
+
+    .pane.dev.active .portada-img {
+        opacity: 0.1;
+    }
+
+    .hero-content-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+
+}
+
+.hero-content-wrapper.hidden,
+.portada-img.hidden {
+    opacity: 0 !important;
+    visibility: hidden;
+}

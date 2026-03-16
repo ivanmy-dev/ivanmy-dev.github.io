@@ -1,0 +1,194 @@
+.slot a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.slot a:visited, 
+.slot a:active {
+    color: inherit;
+}
+
+.about-inventory-system {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+    margin-top: 450px;
+    overflow: visible !important;
+}
+
+.inventory-slots {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    transition: margin-top 0.5s ease;
+    position: relative;
+    z-index: 10; 
+}
+
+.slot {
+    width: 200px;
+    height: 140px;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    transform: scale(1);
+}
+
+.slot-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.slot:not(.active) .icon-svg {
+    animation: iconIdle 4s infinite ease-in-out;
+}
+
+.slot[data-dialog="commitment"] .icon-svg { 
+    animation-delay: 1s; 
+}
+
+.slot[data-dialog="skills"] .icon-svg { 
+    animation-delay: 2s; 
+}
+
+.icon-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+    filter: var(--filter-svg);
+}
+
+.slot-label {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    color: var(--window-bg);
+}
+
+.slot:hover,
+.slot.active {
+    transform: scale(1.15);
+}
+
+.about-inventory-system.cmd-open .slot-icon .icon-svg {
+    filter: var(--filter-svg) !important;
+}
+
+.slot.active .icon-svg {
+    filter: drop-shadow(0 0 8px var(--window-bg)) var(--filter-svg) !important;
+    transform: scale(1.1);
+    animation: iconActivePulse 2s infinite ease-in-out;
+}
+
+.about-inventory-system.cmd-open .inventory-slots {
+    transform: translateY(0);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.about-inventory-system.cmd-open .slot {
+    width: 150px;
+    height: 90px;
+}
+
+.about-inventory-system.cmd-open .slot-icon {
+    width: 55px;
+    height: 55px;
+}
+
+.about-inventory-system.cmd-open .slot-label {
+    font-size: 0.7rem;
+}
+
+.about-inventory-system.cmd-open .slot:hover,
+.about-inventory-system.cmd-open .slot.active {
+    transform: scale(1.1);
+}
+
+.skills-interface {
+    margin-top: 40px !important;
+}
+
+@keyframes iconIdle {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.05); }
+}
+
+@keyframes iconActivePulse {
+    0%, 100% { filter: drop-shadow(0 0 5px var(--window-bg)) var(--filter-svg); }
+    50% { filter: drop-shadow(0 0 15px var(--window-bg)) var(--filter-svg); }
+}
+
+@media (max-width: 768px) {
+    .inventory-slots {
+        transform: translateY(30px);
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+    .slot {
+        width: 130px;
+        height: 140px;
+    }
+    .slot-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .slot-label {
+        font-size: 0.6rem;
+    }
+    .about-visual {
+        bottom: 880px !important; 
+    }
+    .character-card {
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+    }
+    .about-img {
+        width: 250px !important;
+        height: auto !important;
+        max-width: 250px !important;
+        object-fit: contain;
+    }
+    .about-inventory-system.cmd-open .slot {
+        width: 110px;
+        height: 90px;
+    }
+    .about-inventory-system.cmd-open .slot-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .about-inventory-system.cmd-open .slot-label {
+        font-size: 0.6rem;
+    }
+    .skills-interface {
+        margin-top: 15px !important;
+    }
+}

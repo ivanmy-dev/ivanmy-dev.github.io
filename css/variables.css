@@ -1,0 +1,14 @@
+:root {
+    --windows-color: #333;
+    --verde-naturaleza: #4B6F44;
+    --blanco-pastel: #F5F5DC;
+    --fondo-oscuro: #000000;
+    --fondo-verde: var(--verde-naturaleza);
+    --transicion: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    --transicion-logo-pc: all 1s cubic-bezier(1, 0, 0.2, 1);
+    --transicion-logo-rapida: all 0.2s ease-in;
+    --f-blanco-pastel: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(541%) hue-rotate(3deg) brightness(102%) contrast(92%);
+    --f-verde-naturaleza: brightness(0) saturate(100%) invert(37%) sepia(13%) saturate(1022%) hue-rotate(63deg) brightness(94%) contrast(85%);
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-terminal: 'Consolas', 'Monaco', monospace;
+}

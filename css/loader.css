@@ -1,0 +1,103 @@
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fondo-verde);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.loader-logo-container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-logo-svg {
+    height: auto;
+    display: block;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 0;
+    animation: assemblePieces 2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; 
+}
+
+.loader-bar {
+    background-color: var(--blanco-pastel);
+    margin: 40px auto 0 auto; 
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; 
+    animation: load 1.8s ease-out forwards; 
+    animation-delay: 0.1s;
+}
+
+@media (min-width: 769px) {
+    .loader-logo-svg { width: 220px; }
+    .loader-bar { width: 280px; height: 4px; }
+    @keyframes load {
+        0% { width: 0; opacity: 0; }
+        40% { opacity: 1; }
+        100% { width: 280px; opacity: 1; }
+    }
+}
+
+@media (max-width: 768px) {
+    .loader-logo-svg { width: 110px; }
+    .loader-bar { width: 130px; height: 4px; }
+    @keyframes load {
+        0% { width: 0; opacity: 0; }
+        40% { opacity: 1; }
+        100% { width: 130px; opacity: 1; }
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+@keyframes assemblePieces {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translate(-20px, 20px);
+        clip-path: polygon(10% 10%, 20% 10%, 20% 20%, 10% 20%);
+    }
+    15% {
+        opacity: 1;
+        transform: scale(0.8) translate(15px, -10px);
+        clip-path: polygon(0% 0%, 30% 10%, 20% 50%, 0% 40%);
+    }
+    30% {
+        transform: scale(0.85) translate(-10px, 5px);
+        clip-path: polygon(50% 0%, 100% 20%, 80% 60%, 40% 40%);
+    }
+    45% {
+        transform: scale(0.9) translate(5px, -5px);
+        clip-path: polygon(0% 60%, 40% 50%, 50% 100%, 10% 90%);
+    }
+    60% {
+        transform: scale(0.92) translate(-5px, 10px);
+        clip-path: polygon(60% 40%, 100% 50%, 90% 100%, 50% 80%);
+    }
+    75% {
+        transform: scale(0.95) translate(2px, -2px);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 70% 100%, 0% 100%);
+    }
+    90% {
+        transform: scale(0.98);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(0);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}

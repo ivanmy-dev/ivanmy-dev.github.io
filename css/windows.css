@@ -1,0 +1,318 @@
+.skills-window {
+    background-color: var(--window-bg);
+    border: 3px solid var(--windows-color);
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.rpg-dialog-window {
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 620px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    border: 3px solid var(--windows-color);
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: var(--window-bg);
+    color: var(--window-text);
+    z-index: 5; 
+}
+
+.cmd-btn {
+    cursor: pointer;
+    transition: opacity 0.2s;
+    user-select: none;
+}
+
+.cmd-btn:hover {
+    opacity: 0.6;
+}
+
+.about-inventory-system.cmd-open .rpg-dialog-window {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    transition-delay: 0.3s;
+}
+
+.cmd-window-titlebar {
+    background-color: var(--windows-color);
+    margin: -20px -20px 15px -20px;
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blanco-pastel);
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+}
+
+.cmd-system-info {
+    font-family: var(--font-terminal);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--window-text);
+    text-align: left !important;
+    width: 100%;
+}
+
+.typewriter-text {
+    font-family: var(--font-terminal) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: none !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    hyphens: auto;
+}
+
+.dialog-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 2px;
+    background-color: currentColor;
+    animation: blink 0.8s steps(2, start) infinite;
+    vertical-align: 2px;
+    margin-left: -4px;
+}
+
+.cmd-title-left { display: flex; align-items: center; gap: 8px; }
+.cmd-small-icon { width: 14px; height: 14px; background-color: var(--blanco-pastel);}
+.cmd-controls { display: flex; gap: 15px; align-items: center; }
+.cmd-btn { line-height: 1; display: flex; align-items: center; justify-content: center; }
+.btn-close-x { font-size: 1.2rem; margin-bottom: 0; display: flex; align-items: center; justify-content: center; transform: translateY(-1px); }
+.cmd-controls a { text-decoration: none; color: inherit; display: flex; align-items: center; height: 20px; }
+
+.cmd-prompt-line {
+    margin-top: 15px;
+    font-family: var(--font-terminal);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.cmd-path { letter-spacing: 1px; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.window-header {
+    background: var(--windows-color);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-title {
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 25px;
+    color: var(--window-text);
+}
+
+.stat-bar {
+    height: 14px;
+    background: rgba(75, 111, 68, 0.15);
+    border: 2px solid var(--window-text);
+    padding: 2px;
+}
+
+.stat-fill {
+    height: 100%;
+    background: var(--window-text);
+}
+
+.skills-interface {
+    top: 0;
+    width: 100%;
+    max-width: 560px;
+    background: var(--window-bg);
+    border: 3px solid var(--windows-color);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    z-index: 6; 
+    color: var(--window-text);
+}
+
+.cmd-open.skills-active .skills-interface {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    transition-delay: 0.5s;
+}
+
+.stat-main-title {
+    font-size: 0.7rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--window-text);
+    text-align: center;
+}
+
+.level-badge {
+    background: var(--window-text);
+    color: var(--window-bg);
+    padding: 2px 5px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 5px auto;
+}
+
+.skill-row { margin-bottom: 12px; }
+.skill-info { display: flex; justify-content: space-between; font-size: 0.6rem; font-weight: 800; }
+.xp-bar-container { height: 8px; background: rgba(0,0,0,0.1); border: 1px solid var(--window-text); margin-top: 4px; }
+.xp-fill { height: 100%; background: var(--window-text); transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1); }
+
+.about-me-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: var(--font-primary);
+    letter-spacing: 4px;
+    margin-bottom: 150px;
+    color: var(--window-bg);
+    text-align: center;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.about-inventory-system.cmd-open .about-me-title {
+    display: none !important;
+}
+
+.about-inventory-system {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px; 
+    position: relative;
+    margin-top: 450px;
+}
+
+.about-visual {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    left: 47%;
+    transform: translateX(-50%); 
+    bottom: 700px; 
+    z-index: 2; 
+    pointer-events: none;
+}
+
+.cmd-open .about-visual {
+    display: flex;
+    opacity: 1;
+}
+
+.character-card {
+    position: relative;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    line-height: 0;
+}
+
+.about-img {
+    width: 400px;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin: 0;
+    margin-right: 40px;
+    object-fit: cover;
+}
+
+@media (max-width: 1300px) {
+    .skills-interface {
+        position: relative;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        transform: none;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rpg-dialog-window { height: 720px; }
+    .cmd-prompt-line { margin-top: 10px; text-align: left; width: 100%; }
+    .skills-interface {
+        position: relative;
+        left: 0;
+        top: 15px;
+        width: 100%;
+        max-width: 460px;
+        margin-top: 10px;
+    }
+    .about-img {
+        width: 350px;
+    }
+    .about-me-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px !important;
+    }
+    .about-visual {
+        bottom: 880px; 
+    }
+}
+
+.dialog-content { display: flex; flex-direction: column; flex-grow: 1; width: 100%; justify-content: flex-start; }
+.character-name { font-size: 0.7rem; font-weight: 900; letter-spacing: 2px; }
+.about-inventory-system:not(.cmd-open) .rpg-dialog-window { transition: all 0.3s ease; }
+.typewriter-text, .character-name, .dialog-cursor, .cmd-path { color: var(--window-text) !important; }
+.dialog-cursor { background-color: var(--window-text); }
+
+.cmd-phrases-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 20px 0 10px 0;
+    min-height: 1.5rem;
+}
+
+#about-dynamic-quote {
+    font-family: var(--font-terminal);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--window-text);
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+@media (max-width: 768px) {
+    #about-dynamic-quote {
+        font-size: 0.75rem;
+        width: 90%;
+    }
+}

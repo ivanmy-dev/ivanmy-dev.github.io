@@ -1,0 +1,415 @@
+#projects-games.inner-section.projects,
+#projects-dev.inner-section.projects,
+#projects-dev-m.inner-section.projects {
+    scroll-margin-top: -50px;
+    transition: scroll-margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#projects-games.inner-section.projects.unlocked,
+#projects-dev.inner-section.projects.unlocked,
+#projects-dev-m.inner-section.projects.unlocked {
+    scroll-margin-top: 50px !important;
+}
+
+@media (max-width: 768px) {
+    #projects-games.inner-section.projects,
+    #projects-dev.inner-section.projects,
+    #projects-dev-m.inner-section.projects {
+        scroll-margin-top: 60px;
+    }
+
+    #projects-games.inner-section.projects.unlocked,
+    #projects-dev.inner-section.projects.unlocked,
+    #projects-dev-m.inner-section.projects.unlocked {
+        scroll-margin-top: -50px !important;
+    }
+}
+
+.gatekeeper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 60px 40px;
+    background: var(--window-text);
+    border: 1px solid var(--window-bg); 
+    text-align: center;
+    color: var(--window-bg); 
+    font-family: var(--font-primary);
+    margin: 0 auto;
+}
+
+.puzzle-box h3 {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.puzzle-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.error-text {
+    height: 25px;
+    color: #b31717;
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blink-error {
+    animation: blink 0.3s steps(2, start) 3;
+}
+
+.levers-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.lever {
+    width: 50px;
+    height: 80px;
+    background: transparent; 
+    border: 2px solid var(--window-bg); 
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.lever span {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--window-bg);
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.lever::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 35px;
+    background: var(--window-bg);
+    opacity: 0.3; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.lever.active::before {
+    top: 40px; 
+    opacity: 1;
+}
+
+.terminal-lock {
+    width: 100%;
+    background: transparent;
+    color: var(--window-bg);
+    font-family: var(--font-primary);
+    padding: 30px;
+    border: 1px solid var(--window-bg);
+    text-align: center;
+}
+
+
+.dev-pass-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--window-bg);
+    color: var(--window-bg);
+    font-family: var(--font-primary);
+    font-weight: 900;
+    outline: none;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.dev-pass-input::placeholder {
+    color: var(--window-bg);
+    opacity: 0.4;
+}
+
+.hidden-content {
+    display: none;
+    opacity: 0;
+}
+
+.projects.unlocked .hidden-content {
+    display: block;
+    opacity: 1;
+    animation: fadeInSuave 0.8s ease forwards;
+}
+
+.projects.unlocked .gatekeeper-container {
+    display: none;
+}
+
+@keyframes fadeInSuave {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 40px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--window-text);
+    color: var(--window-bg);
+    padding: 5px 10px;
+    font-family: var(--font-terminal);
+    font-size: 0.6rem;
+    font-weight: 900;
+    z-index: 11;
+    border-top-left-radius: 2px;
+    opacity: 0.7;
+}
+
+.project-overlay span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-card {
+    background: var(--window-bg);
+    border: 2px solid var(--windows-color);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.project-tags {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.tag-tech {
+    background: var(--window-text);
+    color: var(--window-bg);
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    font-family: var(--font-terminal);
+    border: 1px solid var(--window-bg);
+    font-weight: 900;
+}
+
+.cartridge-top {
+    height: 8px;
+    background: var(--window-bg);
+    width: 100%;
+}
+
+.project-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail img {
+    opacity: 1;
+}
+
+.project-info {
+    padding: 20px;
+    color: var(--window-text);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--windows-color);
+}
+
+.project-brief {
+    margin: 10px 0 !important;
+    font-size: 0.8rem !important;
+    opacity: 0.9;
+    text-transform: none !important;
+    letter-spacing: 0px !important;
+    line-height: 1.3 !important;
+    color: var(--windows-color);
+}
+
+.project-contributions {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    flex-grow: 1;
+}
+
+.project-contributions li {
+    font-family: var(--font-terminal);
+    font-size: 0.7rem;
+    color: var(--window-text);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.project-links a {
+    font-family: var(--font-primary);
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--window-bg);
+    border: 2px solid var(--window-bg);
+    background: var(--windows-color);
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.project-links a:hover {
+    background: var(--window-text);
+    color: var(--window-bg);
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box;
+        gap: 40px; 
+    }
+
+    .project-card {
+        width: 100% !important;
+        max-width: 400px;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        height: auto !important;
+        transform: none !important;
+        box-sizing: border-box;
+    }
+
+    .project-thumbnail {
+        width: 100% !important;
+        height: auto !important; 
+        min-height: 200px;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .project-thumbnail img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain;
+        background-color: #000; 
+    }
+
+    .project-info {
+        padding: 20px !important;
+    }
+
+    .project-info h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
+
+    .project-brief {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+
+    .project-contributions {
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .puzzle-box, .terminal-lock {
+        width: 90% !important;
+        padding: 20px !important;
+        box-sizing: border-box;
+    }
+
+    .terminal-lock p{
+    font-size: 0.8rem;
+    }
+
+    .gatekeeper-container{
+        width: 75% !important;
+    }
+    
+    .levers-row {
+        gap: 10px;
+    }
+
+    .lever {
+        width: 60px;
+        height: 80px;
+    }
+}
