@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Titulo -->
+    <title>Destinos Turísticos</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="//db.onlinewebfonts.com/c/9568ab5fecc95c71034d6e1d57869180?family=NeubauGrotesk+Lt" rel="stylesheet"
+        type="text/css" />
+    <!-- Boostrap 5.0.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- IconWeb -->
+    <link rel="shortcut icon" href="img/icono.ico" />
+    <link rel="apple-touch-icon" href="img/icono.ico" />
+    <link rel="android-touch-icon" href="img/icono.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- -->
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+
+            <a href="#inicio" class="logo">Destinos Turísticos</a>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sec">Destinos</a></li>
+                <li><a href="#contc">Contacto</a></li>
+                <li><a href="#" class="active" id="btnLogin">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- -->
+    <!-- Fondo-->
+    <section id="inicio">
+        <img src="img/Cielo.png" id="cielo">
+        <h2 id="text">Viaja!</h2>
+        <a href="#sec" id="btn">Ir</a>
+        <img src="img/Mar.png" id="mar">
+        <img src="img/Suelo Montañoso.png" id="suelo">
+    </section>
+    <!-- -->
+    <!-- Contenido -->
+    <div class="sec" id="sec">
+        <div class="top-wrapper">
+            <div class="h2-heading">
+                Elige tu Destino
+            </div>
+            <div class="roa-text">
+                <span class="roa-number">01</span>
+                / Rango de Actividades
+            </div>
+            <div class="line-decoration"></div>
+            <div class="line-decoration2"></div>
+        </div>
+
+        <div class="infoslo container">
+            En Destinos Turísticos, creemos que viajar es la única actividad que compras y te hace más rico. Nos
+            dedicamos a diseñar experiencias que van más allá de un simple itinerario; buscamos conectar tu espíritu
+            aventurero con los rincones más fascinantes del mundo. Ya sea que busques la calma de un refugio natural o
+            la adrenalina de una cumbre nevada, estamos aquí para convertir tu próximo gran sueño en tu mejor recuerdo.
+        </div>
+
+        <div class="arreglo">
+            <!-- Cards -->
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="cardi swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="img/Hotel.png" alt="" class="card-img">
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+                                <h2 class="titulo">Hoteles</h2>
+                                <p class="description">Descubre una selección exclusiva de alojamientos que combinan
+                                    lujo, confort y ubicación privilegiada. Desde resorts frente al mar hasta acogedores
+                                    hoteles boutique en el corazón de la montaña, garantizamos el descanso perfecto
+                                    después de un día de exploración.</p>
+
+                                <button class="button">Explorar</button>
+                            </div>
+                        </div>
+                        <div class="cardi swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="img/Paisajes.png" alt="" class="card-img">
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+                                <h2 class="titulo">Paisajes</h2>
+                                <p class="description">Déjate cautivar por la majestuosidad de la naturaleza en su
+                                    estado más puro. Explora horizontes infinitos, lagos cristalinos y formaciones
+                                    milenarias. Preparamos rutas fotográficas y puntos de observación únicos para que no
+                                    te pierdas ni un solo detalle del entorno.</p>
+
+                                <button class="button">Explorar</button>
+                            </div>
+                        </div>
+                        <div class="cardi swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="img/Hiking.png" alt="" class="card-img">
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+                                <h2 class="titulo">Actividades</h2>
+                                <p class="description">Añade una dosis de aventura a tu viaje con nuestro catálogo de
+                                    experiencias al aire libre. Desde trekking de alta montaña y deportes acuáticos,
+                                    hasta tours culturales guiados. Diseñamos cada actividad pensando en tu seguridad y
+                                    en maximizar la diversión.</p>
+
+                                <button class="button">Explorar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+            </div>
+        </div>
+
+        <div class="top-wrapper">
+            <div class="h2-heading" id="contc">
+                ¿Necesitas Ayuda?
+            </div>
+            <div class="roa-text">
+                <span class="roa-number">02</span>
+                / Información de Contacto
+            </div>
+            <div class="line-decoration"></div>
+            <div class="line-decoration2"></div>
+        </div>
+
+        <div class="container-form">
+            <div class="info-form">
+                <h2></h2>
+                <p>¿Tienes alguna duda sobre tu próximo destino o necesitas un presupuesto personalizado a medida?
+                    Nuestro equipo de expertos en viajes está disponible para asesorarte en cada paso de tu
+                    planificación. No importa qué tan lejos quieras llegar, estamos a un solo mensaje de distancia para
+                    ayudarte a despegar.</p>
+                <a href="#contc"><i class="fa fa-phone"></i> 123-456-789</a>
+                <a href="#contc"><i class="fa fa-envelope"></i> viajes@destinosturisticos.com</a>
+                <a href="#contc"><i class="fa fa-map-marked"></i> Santiago, Chile.</a>
+            </div>
+            <form id="forms" autocomplete="off" onsubmit="enviarFormulario(event)">
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" class="campo">
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" class="campo">
+                <textarea name="mensaje" id="mensaje" placeholder=""></textarea>
+                <input type="submit" name="enviar" value="Enviar" class="btn-enviar">
+            </form>
+            <div class="message">
+                <div class="success" id="success"> Mensaje Enviado correctamente, Te contactaremos.</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- -->
+    <!-- Footer -->
+    <div class="container-fluid footerss">
+        <div class="cols-xs-12 footers">
+            <p class="text-white text-center"> Destinos Turisticos 2022&copy; | Developer: <a
+                    href="https://www.linkedin.com/in/ivanmy-dev/" target="_blank">IvanMY</a></p>
+        </div>
+    </div>
+
+    <!-- -->
+</body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/message.js"></script>
+<script src="js/fondo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<!-- -->
+
+</html>
