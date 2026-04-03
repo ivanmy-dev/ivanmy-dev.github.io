@@ -8,8 +8,8 @@
     padding: 20px;
     position: relative;
     width: 100%;
-    max-width: 700px;
-    height: 620px;
+    max-width: 750px;
+    height: 720px;
     overflow-y: auto;
     box-sizing: border-box;
     display: none;
@@ -245,7 +245,7 @@
 }
 
 .about-img {
-    width: 400px;
+    width: 500px;
     max-width: none;
     height: auto;
     display: block;

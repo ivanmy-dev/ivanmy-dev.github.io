@@ -1,0 +1,151 @@
+/* Envoltura */
+#envolve-inicio{
+    width: 290px;
+    height: 320px;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    border-radius: 7px;
+    text-align: center;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+#envolve-inicio .container{
+    color: #fff;
+}
+/* */
+/* Contenido */
+#envolve-inicio .ln-br{
+    border-top: 1px #cd0d12 solid;
+}
+
+#envolve-inicio h1{
+    font-size: 24px;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+}
+#envolve-inicio h2{
+    font-size: 16px;
+    padding: 0.8rem 0;
+}
+#envolve-inicio p{
+    font-size: 15px;
+    padding-bottom: 1rem;
+}
+
+.position-nstr{
+    padding: 15px 52.5px; 
+}
+
+.position-nstr a{
+    text-decoration: none;
+    color: #fff; 
+}
+
+.btnNstr{
+    width: 10rem;
+    height: 3.5rem;
+    background-image: linear-gradient(90deg,#FC4F4F 0,rgb(46, 17, 17) 49%,rgb(78, 60, 60) 80%,#FC4F4F 100%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size:1.9rem;
+    font-weight:490;
+    box-sizing: border-box;
+}
+
+.btnNstr:after{
+    content: attr(alt);
+    width: 10rem;
+    height: 3rem;
+    background: #191919;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnNstr:hover{animation:slidebg 1.5s linear infinite;}
+
+.btnNstr:active{color: #13a70b;}
+
+@keyframes slidebg{to{background-position: 15vw;}}
+
+/* */
+/* Medias */
+@media (min-width: 768px){
+    #envolve-inicio{
+        width: 650px;
+        height: 650px;
+        margin: auto;
+        padding: 130px 10px;
+    }
+    #envolve-inicio .ln-br{
+        width: 73%;
+        max-width: 730px;
+        margin: 0 auto;
+    }
+    #envolve-inicio h1{
+        font-size: 55px;
+        font-weight: 1290px;
+    }
+    #envolve-inicio h2{
+        font-size: 32px;
+    }
+    #envolve-inicio p{
+        font-size: 31px;
+    }
+    .position-nstr{
+        padding: 45px 152.5px; 
+    }
+    .btnNstr{
+        width: 21rem;
+        height: 8rem;
+        font-size:3.9rem;
+        font-weight:690;
+    }
+    .btnNstr:after{
+        width: 21rem;
+        height: 7.5rem;
+    }
+}
+@media (min-width: 1024px){
+    #envolve-inicio{
+        width: 980px;
+        height: 550px;
+        margin: auto;
+        padding: 55px 10px;
+    }
+    #envolve-inicio .ln-br{
+        width: 85%;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    #envolve-inicio h1{
+        font-size: 85px;
+        font-weight: 1290px;
+        padding-bottom: 2rem;
+    }
+    #envolve-inicio h2{
+        font-size: 58px;
+    }
+    #envolve-inicio p{
+        font-size: 40px;
+    }
+    .position-nstr{
+        padding: 15px 302.5px; 
+    }
+    .btnNstr{
+        width: 21rem;
+        height: 8rem;
+        font-size:3.9rem;
+        font-weight:690;
+    }
+    .btnNstr:after{
+        width: 21rem;
+        height: 7.5rem;
+    }
+}
+
+/* */

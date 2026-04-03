@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="CSS/fonts.css">
+    <!-- IconWeb -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.ico" />
+    <link rel="apple-touch-icon" href="img/icon.ico" />
+    <link rel="android-touch-icon" href="img/icon.ico" />
+    <!--  -->
+
+    <title>Do iT!</title>
+</head>
+
+<body>
+    <!-- Slide Principal -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="height: 100vh;">
+                <img class="d-block w-100" src="img/1.jpg">
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+                <img class="d-block w-100" src="img/2.jpg">
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+                <img class="d-block w-100" src="img/3.jpg">
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+                <img class="d-block w-100" src="img/4.jpg">
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+                <img class="d-block w-100" src="img/5.jpg">
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+                <img class="d-block w-100" src="img/6.jfif">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+    <!-- Header -->
+    <header class="menu">
+        <div class="w">
+            <a href="#carouselExampleIndicators" class="logo"><img src="img/Do It Fitness Club.png"></a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item"><a href="#carouselExampleIndicators">Home</a></li>
+                <li class="nav-item"><a href="#gym-emp">Empresa</a></li>
+                <li class="nav-item"><a href="#gym-contc">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Consejos Nutricionales -->
+    <div id="gym-emp" class="gym-emp container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <h3>Consejos Nutricionales Fitness</h3>
+                <p>
+                    Si preguntas a cualquier nutricionista, te dirá que, independientemente de tu entrenamiento,
+                    la alimentación el combustible que te ayuda a alcanzar tus
+                    objetivos y sin una nutrición adecuada a través de alimentos de calidad, es muy probable que te
+                    estanques. Olvídate de
+                    batidos y suplementos hasta que tengas tu alimentación diaria bien planificada.
+                </p>
+                <p>
+                    Independientemente de lo que estés haciendo, prepárate la comida con anticipación y así tendrás una
+                    mayor oportunidad de
+                    lograr tus metas. Lo mejor es que te prepares la comida de hoy el día anterior. Con esto nos
+                    aseguraremos de que no
+                    comemos cualquier cosa o nos saltamos comidas.
+                </p>
+                <p>
+                    Comer menos puede perjudicar tu rendimiento en el gimnasio y bajar tu metabolismo (reduciendo el
+                    consumo de energía en
+                    reposo). No hay un criterio claro si es mejor comer 3 ó 6 veces al día, aquí cada uno «vende su
+                    libro», pero busca
+                    aquella frecuencia que te resulte más cómoda y consume alimentos de alta calidad nutricional y que
+                    encima estén buenos.
+                    ¿Sigues pensando que un batido de protes es la mejor cena?
+                </p>
+                <p>
+                    Olvídate de comer delante del televisor o mandando whatsapps. Si comes acompañado, en un ambiente
+                    tranquilo y
+                    conversando, disfrutarás mucho más de la comida. ¡Desconecta del frenesí diario, tómate tu tiempo y
+                    disfruta del
+                    momento!
+                </p>
+            </div>
+            <!-- Calculadora IMC -->
+            <div class="col-4">
+                <h3>Calcular IMC</h3>
+                <form name="calculadora" id="calculadora" onsubmit="calcimc(this)">
+                    Ingrese su Peso(kg)
+                    <input type="range" class="custom-range" value="70" min="40" max="150" id="kilo">
+                    <input type="text" name="rkilo" id="rkilo" value="70 kg" readonly
+                        style="border: none; background: transparent; color: white;">
+
+                    <br><br>
+
+                    Ingrese su Altura(cm)
+                    <input type="range" class="custom-range" value="170" min="100" max="220" id="centiM">
+                    <input type="text" name="rcentiM" id="rcentiM" value="170 cm" readonly
+                        style="border: none; background: transparent; color: white;">
+                    </br> </br>
+                    <button type="submit" class="boton2">CALCULAR</button>
+                    </br></br>
+                    <div id="resultado"></div>
+                </form>
+            </div>
+            <!-- Galeria de Eventos -->
+            <div class="col-4">
+                <h3>Galeria de Eventos</h3>
+                <div class="galEv">
+                    <img src="img/zumba.jpg" height="120">
+                    <img src="img/yoga.jpg" height="120">
+                    <img src="img/macrosesion.jpg" height="120">
+                    <img src="img/comp.jpg" height="120">
+                </div>
+            </div>
+        </div>
+        <!-- Slide Sponsors -->
+        <div class="emp-logos">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <img src="img/Gatorade.png" width="300" height="150">
+                            <img src="img/sto.png" width="300" height="150">
+                            <img src="img/suple.png" width="300" height="150">
+                            <img src="img/zmba.png" width="300" height="150">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <img src="img/food lyon.png" width="300" height="150">
+                            <img src="img/adidas.png" width="300" height="150">
+                            <img src="img/puma.png" width="300" height="150">
+                            <img src="img/polar.png" width="300" height="150">
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario Contacto -->
+    <div id="gym-contc" class="gym-contc">
+        <div class="container-fluid row">
+            <img src="img/horarios.png" width="1000" height="500">
+            <div class="col-4">
+                <h3>Contacto</h3>
+                <form name="contactoform" id="contactoform" onsubmit="contac(this)">
+                    Ingrese Nombre <input type="text" name="nombre" id="nombre" required>
+                    </br></br>
+                    Ingrese Email <input type="text" name="mail" id="mail" required>
+                    </br></br>
+                    Ingrese Télefono <input type="text" name="telefono" id="telefono" required>
+                    </br></br>
+                    Ingrese Mensaje <textarea name="mensaje" id="mensaje" required></textarea>
+                    </br></br>
+                    <input type="submit" value="ENVIAR" class="boton" />
+                </form>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="redesSoc">
+                <ul>
+                    <a href="https://www.facebook.com" class="icon-facebook" target="a_blank"></a>
+                    <a href="https://www.instagram.com" class="icon-instagram" target="a_blank"></a>
+                    <a href="https://twitter.com/" class="icon-twitter" target="a_blank"></a>
+                </ul>
+            </div>
+            <div class="copyFooter">
+                San Martín 654, 4° piso, Concepción <br>
+                (+56 41 2798226) (info@doitfitness.cl) <br>
+                Do It! Fitness Club 2020&copy; | Desarrollado por: <a
+                    href="https://www.instagram.com/ivaan.my/?hl=es-la">IvánMY</a>
+            </div>
+        </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById("calculadora").addEventListener("submit", function (event) {
+            event.preventDefault()
+        })
+        document.getElementById("contactoform").addEventListener("submit", function (event) { event.preventDefault() });
+    </script>
+    <!--  -->
+</body>
+
+</html>

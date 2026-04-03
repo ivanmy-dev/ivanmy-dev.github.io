@@ -1,0 +1,230 @@
+/* Header */
+
+header{
+    /* Tamaño */
+    width: 100%;
+    height: 110px;
+    /*  */
+    /* Color Diseño */
+    background: #fff;
+    border-bottom: 0.5px #c4302b solid;
+    /* Posicion para el Scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /*  */
+}
+
+header #logo{
+    float: left;
+    margin-top:  1px;
+}
+
+header #logo2{
+    display: none;
+}
+header .container{
+    display: table;
+}
+
+/* */
+
+/* Menu */
+#menu-bar{
+    display: none;
+}
+
+header label{
+    float: right;
+    font-size: 28px;
+    margin: 13px 0;
+    cursor: pointer;
+}
+
+.menu{
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(158, 119, 119, 0.945);
+    transition: all 0.09s;
+    transform: translateX(100%);
+}
+
+.menu a{
+    text-align: center;
+    display: block;
+    color: #fff;
+    height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(247, 247, 247, 0.5);
+}
+
+.menu a:hover{
+    background: rgba(255, 255, 255, 0.199);
+}
+
+.menu a:active{
+    color: #13a70b;
+}
+
+#menu-bar:checked ~ .menu {
+    transform:  translateY(0%);
+}
+
+/**/
+
+/* Redes Sociales Header */
+
+.redes-header{
+    /* Tamaño */
+    width: 100%;
+    height: 50px;
+    /*  */
+    /* Color Diseño */
+    background:  rgb(31, 31, 31);
+    /*  */
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.redes-header a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.gmail-left{
+    float: left;
+    margin: 12.3px 12.2px 0 15px;
+}
+
+.redes-right{
+    float: right;
+    margin: 12.3px 12.2px 15px 0;
+}
+
+.redes-right a{
+    padding: 0 3px;
+}
+
+.cro-hd{
+    display: none;
+    line-height: 1;
+}
+.icon-gmail{
+    line-height: 1.3;
+}
+
+.icon-gmail:active{color: #d14836;}
+.icon-tv:active{color: #c733bb;}
+.icon-discord:active{color:#7288db;}
+.icon-facebook:active{color:#1877f2;}
+.icon-instagram:active{color:#e4405f;}
+.icon-telegram:active{color:#2ca5e0;}
+.icon-twitter:active{color:#1da1f2;}
+.icon-twitch:active{color:#6441a4;}
+.icon-youtube:active{color:#f00;}
+
+/* */
+
+/* Medias */
+
+@media (min-width: 767px){
+    header label{
+        font-size: 43px;
+        margin: 17px 0;
+    }
+    .menu{
+        top: 131px;
+    }
+    .menu a{
+        height: 80px;
+        padding: 25px;
+        font-size: 25px;
+    }
+    .redes-right a{
+        padding-left: 12px;
+    }
+    .icon-gmail{
+        display: none;
+    }
+    .cro-hd{
+        display: inline-block;
+        font-size: 23px;
+    }
+    .cro-hd:active{
+        color: #c4302b;
+    }
+    header{
+        width: 100%;
+        height: 131px;
+    }
+    header #logo{
+        display: none;
+    }
+    header #logo2{
+        display: inline-block;
+        margin-top: 5px;
+    }
+    header #logo2 img{
+        width: 70px;
+        height: 70px;
+    }
+}
+@media (min-width: 1024px){
+    header .container{
+        width: 1000px;
+    }
+     .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(1%);
+        float: right;
+        display: flex;
+        background: none;
+        font-size: 28px;
+        line-height: 1.5;
+    }
+    .menu a{
+        border: none;
+        color: #cd0d12;
+        transition: all 0.2s linear;
+    }
+    .menu a:hover{
+        background: none;
+        font-size: 30px;
+        position: relative;
+    }
+    header label{
+        display: none;
+    } 
+    .redes-right a{
+        margin: 12.3px 12.2px 0 0;
+    }
+    .gmail-left{
+        margin: 12.3px 12.2px 0 0;
+    }
+    .redes-header a:active{
+        color: #13a70b;
+    }
+    .icon-tv:hover{color: #c733bb;}
+    .icon-discord:hover{color:#7288db;}
+    .icon-facebook:hover{color:#1877f2;}
+    .icon-instagram:hover{color:#e4405f;}
+    .icon-telegram:hover{color:#2ca5e0;}
+    .icon-twitter:hover{color:#1da1f2;}
+    .icon-twitch:hover{color:#6441a4;}
+    .icon-youtube:hover{color:#f00;}
+}
+@media (max-width: 280px){
+    .redes-header{
+        font-size: 18px;
+    }
+}
+
+/* */

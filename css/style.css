@@ -218,19 +218,23 @@
 
 .close-btn {
     position: fixed;
-    top: 30px;
-    right: 30px;
     font-size: 2.5rem;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transition: var(--transicion);
-    z-index: 1000;
+    z-index: 99999;
+    background: none; 
+    border: none;
 }
 
 .pane.active .close-btn {
     opacity: 1;
     pointer-events: all;
+}
+
+.close-btn:active {
+    transform: scale(0.9);
 }
 
 @media (max-width: 768px) {
@@ -250,45 +254,15 @@
         scroll-margin-top: 100px !important;
     }
 
-    /* AJUSTE PARA MOSTRAR SOLO LA X EN MÓVIL */
     .section-header, .section-header-pc, .section-header-mobile {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
-        pointer-events: none !important; /* El contenedor no interfiere */
+        pointer-events: none !important; 
     }
 
     .section-header *, .section-header-pc *, .section-header-mobile * {
-        display: none !important; /* Oculta logo y nav */
-    }
-
-    .close-btn {
-        display: flex !important; /* Forzamos la X */
-        position: fixed !important;
-        right: 20px !important;
-        width: 50px;
-        height: 50px;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-        z-index: 99999 !important;
-        pointer-events: all !important;
-        opacity: 0; /* Por defecto oculta hasta que el pane esté activo */
-    }
-
-    .pane.active .close-btn {
-        opacity: 1 !important;
-    }
-
-    .games.active .close-btn {
-        top: 20px !important;
-        color: var(--blanco-pastel);
-    }
-
-    .dev.active .close-btn {
-        bottom: 20px !important;
-        top: auto !important;
-        color: var(--verde-naturaleza);
+        display: none !important;
     }
 
     .central-logo-container {
@@ -344,7 +318,6 @@
     left: 0;
     width: 100%;
     height: 80px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
@@ -730,3 +703,54 @@
     justify-content: center;
     min-height: 300px;
 }
+
+@media (min-width: 769px) {
+    .section-header-pc { display: flex !important; }
+    .section-header-mobile { display: none !important; }
+    .section-header { display: flex !important; } 
+}
+
+@media (max-width: 768px) {
+    .section-header-pc { display: none !important; }
+    .section-header-mobile { display: flex !important; }
+    .section-header { display: flex !important; }
+}
+
+@media (min-width: 769px) {
+    .close-btn.pc {
+        display: block; 
+        top: 30px; 
+        right: 30px;
+    }
+    .close-btn.mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .close-btn.pc {
+        display: none !important; 
+    }
+    
+    .close-btn.mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        top: 20px;    
+        right: 20px;
+    }
+
+    .games .close-btn.mobile {
+        color: var(--blanco-pastel);
+    }
+
+    .dev .close-btn.mobile {
+        top: auto;   
+        bottom: 20px;  
+        right: 20px;
+        color: var(--verde-naturaleza);
+    }
+}
+

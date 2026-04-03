@@ -92,7 +92,7 @@ panes.forEach(pane => {
             panes.forEach(p => p.classList.remove('active'));
             pane.classList.add('active');
             wrapper.classList.add('section-open');
-            
+
             pane.style.overflowY = 'hidden';
             setTimeout(() => {
                 pane.style.overflowY = 'auto';
@@ -113,10 +113,10 @@ window.addEventListener('load', () => {
 });
 
 const personalDialogs = {
-    identity: "Hola, mi nombre es Iván Medrano Yévenes, soy Analista Programador y estudiante de Técnico en Diseño de Videojuegos, pero antes que eso, soy una persona que cree en construir cosas con sentido, dedicación y respeto por quienes trabajan conmigo.<br> Actualmente soy co-fundador y miembro de Nibel Estudio, un estudio emergente enfocado en videojuegos y experiencias interactivas.<br> Me interesa especialmente el proceso de crear y experimentar con ideas, transformar conceptos en proyectos reales y aprender constantemente a través de lo que construyo.",
-    commitment: "Trabajo desde un enfoque honesto y colaborativo. No me interesa 'venderme' como experto en todo, sino mostrar lo que sé hacer bien, lo que estoy aprendiendo y hasta dónde puedo llegar si me dan el espacio. Cuando algo falla, no me voy: me quedo, me hago cargo y busco soluciones.<br> Soy una persona exigente conmigo mismo, a veces perfeccionista, pero siempre con la intención de entregar trabajos de calidad. Estoy en constante aprendizaje, con ambición por crecer tanto personal como profesionalmente, y con el objetivo de crear proyectos que no solo funcionen, sino que también conecten con las personas y tengan un impacto real.<br> Además, soy vegano, porque creo en vivir de forma más consciente y en causar el menor daño posible cuando está en nuestras manos evitarlo.",
-    skillsGames: "Mi enfoque principal está en el desarrollo de videojuegos y experiencias interactivas. Trabajo principalmente con Unity y C#, donde disfruto diseñar y programar sistemas, mecánicas y prototipos que priorizan la claridad, la jugabilidad y la intención detrás de cada decisión.<br> Mi flujo de trabajo suele seguir un orden riguroso: primero analizo la 'segunda' fase de diseño, luego ejecuto la 'tercera' iteración de código y finalmente realizo la 'primera' prueba de jugabilidad.<br> Actualmente participo en proyectos académicos y de emprendimiento relacionados con videojuegos, donde busco aplicar lo aprendido, experimentar y construir a largo plazo. Mi objetivo es dedicar mi carrera a crear juegos y experiencias interactivas que se sientan auténticas, bien construidas y con personalidad propia.",
-    skillsDev: "También desarrollo proyectos web y aplicaciones como una forma de resolver problemas concretos, fortalecer mis habilidades técnicas y mantener independencia creativa mientras construyo proyectos de mayor alcance.<br> Veo el desarrollo web y de apps como una herramienta práctica, versátil y complementaria a mi trabajo creativo.<br> Mi enfoque no se limita a escribir código funcional; mi verdadera motivación es 'crear con sentido', priorizando la comprensión del problema y la utilidad real de la solución antes que la complejidad innecesaria.<br> Cada proyecto es una oportunidad para aprender, mejorar y entregar resultados que aporten valor."
+    identity: "Hola, mi nombre es Iván Medrano Yévenes. Soy Analista Programador y Diseñador de Videojuegos, combinando lógica, creatividad y diseño en cada proyecto que realizo.<br>Me interesa crear proyectos que no solo funcionen, sino que transmitan algo y conecten con las personas.<br>Disfruto experimentar con ideas, llevarlas a la práctica y aprender constantemente a través de lo que construyo.<br>Además, participo activamente en iniciativas académicas, mentorías y actividades formativas, lo que me ha permitido desarrollar no solo habilidades técnicas, sino también trabajo en equipo y comunicación.",
+    commitment: "Parte de mis valores se basa en intentar vivir de forma consciente, tomando decisiones que reduzcan el daño cuando está en mis manos hacerlo. Esto también se refleja en mi estilo de vida; el veganismo forma parte de esa coherencia personal y del respeto que intento tener hacia otras formas de vida.<br>Esa misma visión la llevo a mi forma de trabajo, desde un enfoque honesto y colaborativo. No busco aparentar saberlo todo, sino ser claro con lo que sé, lo que estoy aprendiendo y hasta dónde puedo llegar. Cuando algo falla, no me aparto: me quedo, me hago cargo y busco soluciones.<br>Soy exigente conmigo mismo, a veces perfeccionista, pero siempre con la intención de entregar trabajos bien hechos y seguir mejorando constantemente.<br>Me interesa crear proyectos que no solo funcionen, sino que también conecten con las personas y tengan un impacto real.",
+    skillsGames: "Mi enfoque principal está en el diseño y desarrollo de videojuegos. Trabajo principalmente con Unity y C#, donde desarrollo sistemas, mecánicas y prototipos enfocados en la jugabilidad, la claridad y la intención detrás de cada decisión.<br>Me interesa entender el propósito de cada elemento antes de implementarlo, asegurando que todo lo que construyo tenga coherencia dentro del juego.<br>Suelo abordar los proyectos de forma iterativa: analizo, pruebo, ajusto y vuelvo a construir, buscando mejorar constantemente sin perder la esencia de la idea original.<br>Actualmente desarrollo proyectos académicos y personales, donde aplico lo aprendido, experimento con nuevas ideas y construyo pensando en el largo plazo.<br>Me interesa especialmente que cada proyecto tenga una intención clara, más allá de lo técnico, buscando que tenga sentido y genere algo en quien lo juega.",
+    skillsDev: "También desarrollo proyectos web y aplicaciones como una forma de resolver problemas concretos, fortalecer mis habilidades técnicas y mantener independencia mientras construyo proyectos de mayor alcance.<br>Veo el desarrollo web y de apps como una herramienta práctica y versátil, enfocada en crear soluciones claras, útiles y bien estructuradas.<br>Me enfoco en comprender el problema antes de desarrollar, priorizando la simplicidad, la eficiencia y evitando la complejidad innecesaria.<br>Cada proyecto representa una oportunidad para mejorar, optimizar mi forma de trabajar y entregar resultados sólidos."
 };
 
 function typeWriter(container, textContent, folderName) {
@@ -126,7 +126,7 @@ function typeWriter(container, textContent, folderName) {
     if (charIndex < textContent.length) {
         isTyping = true;
         if (textContent.slice(charIndex, charIndex + 4) === "<br>") {
-            container.innerHTML += "<br><br>"; 
+            container.innerHTML += "<br><br>";
             charIndex += 4;
         } else {
             container.innerHTML += textContent.charAt(charIndex);
@@ -245,7 +245,7 @@ function initProjectPuzzles() {
                 const pass = this.value.trim();
                 const parentGate = this.closest('.gatekeeper-container');
                 const projectsSection = parentGate.closest('.projects');
-                if (pass === 'crearconsentido') {
+                if (pass === 'crearconsentido' || pass == 'crear con sentido' || pass === 'CREARCONSENTIDO' || pass == 'CREAR CON SENTIDO') {
                     projectsSection.classList.add('unlocked');
                     const targetId = projectsSection.id;
                     setTimeout(() => {
@@ -255,8 +255,8 @@ function initProjectPuzzles() {
                 } else {
                     const error = parentGate.querySelector('.dev-error-msg');
                     if (error) {
-                        error.textContent = "ACCESO DENEGADO. INTENTE OTRA VEZ.";
-                        showTutorial("Busca las comillas ('') en biografía/habilidades.");
+                        error.textContent = "CONTRASEÑA ERRÓNEA. INTENTE OTRA VEZ.";
+                        showTutorial();
                         setTimeout(() => { error.textContent = ""; }, 2000);
                     }
                     this.value = "";
@@ -297,7 +297,7 @@ function initProjectPuzzles() {
                     if (errorDisplay) {
                         errorDisplay.textContent = "ERROR: SECUENCIA INCORRECTA";
                         errorDisplay.classList.add('blink-error');
-                        showTutorial("Busca las comillas ('') en biografía/habilidades.");
+                        showTutorial();
                     }
                     setTimeout(() => {
                         if (errorDisplay) {
@@ -315,7 +315,7 @@ function initProjectPuzzles() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                showTutorial("Busca las comillas ('') en biografía/habilidades.");
+                showTutorial();
                 observer.unobserve(entry.target);
             }
         });
@@ -323,7 +323,7 @@ function initProjectPuzzles() {
     document.querySelectorAll('.gatekeeper-container').forEach(el => observer.observe(el));
 }
 
-function showTutorial(message, duration = 5000) {
+function showTutorial(message, duration = 6000) {
     const toast = document.getElementById('tutorial-toast');
     const toastMsg = document.getElementById('toast-message');
     if (!toast || !toastMsg) return;
@@ -331,15 +331,19 @@ function showTutorial(message, duration = 5000) {
     const activePane = document.querySelector('.pane.active');
     toast.classList.remove('games-theme', 'dev-theme', 'toast-error');
 
+    let customMessage = message;
+
     if (activePane) {
         if (activePane.classList.contains('games')) {
             toast.classList.add('games-theme');
+            if (!message) customMessage = "Usa la secuencia 2-3-1 para continuar";
         } else if (activePane.classList.contains('dev')) {
             toast.classList.add('dev-theme');
+            if (!message) customMessage = "Ingresa 'crearconsentido' para continuar";
         }
     }
 
-    toastMsg.textContent = message;
+    toastMsg.textContent = customMessage;
     toast.classList.add('show');
 
     setTimeout(() => {
@@ -370,5 +374,53 @@ document.querySelectorAll('.rpg-dialog-window').forEach(windowEl => {
                 }
             }
         });
+    }
+});
+
+
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('open-internal')) {
+        if (window.innerWidth <= 768) return; 
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const container = document.getElementById('project-preview-container');
+        const iframe = document.getElementById('project-iframe');
+        const titleSpan = document.getElementById('preview-title');
+
+        const projectUrl = e.target.getAttribute('href');
+        const cardInfo = e.target.closest('.project-info');
+        const cardTitle = cardInfo ? cardInfo.querySelector('h3').textContent : "PROYECTO";
+
+        console.log("Intentando abrir:", cardTitle);
+
+        if (container && iframe) {
+            if (titleSpan) titleSpan.textContent = cardTitle;
+
+            iframe.src = projectUrl;
+
+            container.style.display = 'block';
+
+            setTimeout(() => {
+                container.classList.add('show');
+            }, 50);
+        } else {
+            console.error("Error: No se encontró el contenedor de previsualización en el HTML.");
+        }
+    }
+
+    if (e.target.classList.contains('close-preview')) {
+        const container = document.getElementById('project-preview-container');
+        const iframe = document.getElementById('project-iframe');
+
+        if (container) {
+            container.classList.remove('show');
+            setTimeout(() => {
+                container.style.display = 'none';
+                if (iframe) iframe.src = '';
+            }, 400);
+        }
     }
 });

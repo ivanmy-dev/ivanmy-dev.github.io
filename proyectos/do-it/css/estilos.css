@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(header.css);
+@import url(footer.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+/*Consejos Nutricionales*/
+.gym-emp{ 
+    background: url(../img/bg.png);
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.gym-emp h3{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+.gym-emp p{
+    text-align: justify;
+}
+.row{
+    margin: 0;
+    padding: 0;
+    padding: 15px;
+    color: white;
+}
+/*Form Contacto*/
+.gym-contc {
+    min-height: 100vh;
+    background: #131313;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.gym-contc .container-fluid.row {
+    max-width: 1600px; 
+    margin: 0 auto;    
+    width: 100%;
+    flex: 1;           
+    padding-bottom: 50px;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+.gym-contc .row{
+    flex: 1;
+    padding-bottom: 50px; 
+    align-items: center;
+}
+.gym-contc h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    color: white;
+}
+footer {
+    margin-top: auto; 
+}
+.gym-contc img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.gym-contc .col-form {
+    flex: 0 1 450px;
+}
+.gym-contc footer {
+    margin-top: auto;
+    width: 100%;
+}
+/*Sponsors*/
+.emp-logos{
+    background: #66656523;
+    border: 1px #bebebe23 solid;
+    height: 200px;
+    padding-top: 25px;
+}
+.emp-logos .row{
+  margin: auto 0;
+  height: 200px;
+}
+.emp-logos img{
+  margin: auto;
+  max-height: 100px;
+}
+/*Galeria de eventos*/
+.galEv {
+    width: 100%; 
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.galEv img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border: 1px #007bff solid;
+    display: block;
+}
+/*Form*/
+form{
+  width: 450px;
+  margin: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+input,textarea,button{
+  width: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border: none;
+}
+textarea{
+  min-height: 90px;
+  max-height: 90px;
+  max-width: 100%;
+}
+/*IMC*/
+#calculadora input{
+    background-color: transparent;
+    color: #FFF;
+}
+/*Form Botones*/
+.boton{
+  background: red;
+  color: #fff;
+}
+.boton:hover{
+  background: rgb(255, 38, 38);
+}
+.boton2{
+  background:  #007bff;
+  color: #fff;
+}
+.boton2:hover{
+  background: #2e93ff;
+}

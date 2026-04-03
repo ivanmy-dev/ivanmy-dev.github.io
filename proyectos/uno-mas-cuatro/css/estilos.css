@@ -1,0 +1,81 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(envolve-inicio.css);
+@import url(header.css);
+@import url(footer.css);
+@import url(envolve-main.css);
+
+/* */
+
+/* Container, Body, html, todo el cuerpo */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image: url(../imagenes/fondo.jpg);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin-top: 130px;
+}
+
+.container{
+    width: 98%;
+    margin: auto;
+}
+
+main{
+    min-height: calc(100vh - 180px);
+}
+
+/* */
+
+/* Medias */
+
+@media (min-width: 1024px){
+
+    /* Boton Subir scroll */
+
+    .ir-arriba{
+        display: none;
+        border-radius: 40px;
+        background-color: #fff;
+        padding: 2px;
+        font-size: 58px;
+        color: #cd0d12;
+        cursor: pointer;
+        position: fixed;
+        bottom: calc(100vh - 85vh - 60px);
+        right: 16px;
+    }
+    .icon-circle-up:before{
+        display: block;
+    }
+    
+    /* */
+
+}
+
+@media (min-width: 767px){
+    body{
+        margin-top: 160px;
+    }
+    main{
+        min-height: calc(100vh - 210px);
+    }
+}
+
+/* */
+
+/* Boton Subir scroll */
+
+.ir-arriba{
+    display: none;
+}
+
+/* */

@@ -1,0 +1,32 @@
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background: #000000c7;
+}
+
+.menu .logo{
+    width: 150px;
+    float: left;
+}
+
+.menu .nav{
+  line-height: 4;
+} 
+.menu .nav a{
+    padding: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+.menu .nav a:hover{
+    font-weight: bold;
+}
+.menu .w{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wfh50x');
+  src:  url('fonts/icomoon.eot?wfh50x#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wfh50x') format('truetype'),
+    url('fonts/icomoon.woff?wfh50x') format('woff'),
+    url('fonts/icomoon.svg?wfh50x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-thin-lanes:before {
+  content: "\e90d";
+}
+.icon-gmail:before {
+  content: "\e907";
+}
+.icon-youtube:before {
+  content: "\e906";
+}
+.icon-twitch:before {
+  content: "\e900";
+}
+.icon-facebook:before {
+  content: "\e901";
+}
+.icon-telegram:before {
+  content: "\e902";
+}
+.icon-discord:before {
+  content: "\e903";
+}
+.icon-twitter:before {
+  content: "\e904";
+}
+.icon-instagram:before {
+  content: "\e905";
+}
+.icon-tv:before {
+  content: "\e95b";
+}
+.icon-menu:before {
+  content: "\e9bd";
+  color: #c4302b;
+}
+.icon-circle-up:before {
+  content: "\ea41";
+  display: none;
+}

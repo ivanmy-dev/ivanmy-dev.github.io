@@ -1,0 +1,33 @@
+footer{
+    width: 100%;
+    height: 50px;
+    background:  rgb(31, 31, 31);
+    color: white;
+    font-size: 12px;
+    border-top: 1px #c4302b solid;
+    text-align:  center;
+    line-height: 4;
+}
+.ds-wb{
+    text-decoration: none;
+    color: #c4302b;
+}
+
+.ds-wb:active{
+    color: #13a70b;
+}
+@media (min-width: 767px){
+    footer{
+        line-height: 3;
+        font-size: 17px;
+        height: 60px;
+    }
+    footer p{
+         padding-top: 7px;
+    }
+}
+@media (max-width: 280px){
+    footer{
+        font-size: 11px;
+    }
+}
