@@ -53,19 +53,36 @@ panes.forEach(pane => {
         }
     });
 
-    pane.addEventListener('click', (e) => {
-        if (e.target.classList.contains('close-btn')) {
-            pane.classList.remove('active');
-            wrapper.classList.remove('section-open');
+    pane.addEventListener('click', () => {
+        if (!pane.classList.contains('active')) {
+            panes.forEach(p => p.classList.remove('active'));
+            pane.classList.add('active');
+            wrapper.classList.add('section-open');
+
             pane.style.overflowY = 'hidden';
+            setTimeout(() => {
+                pane.style.overflowY = 'auto';
+            }, 1000);
+        }
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-btn')) {
+        const activePane = document.querySelector('.pane.active');
+        
+        if (activePane) {
+            activePane.classList.remove('active');
+            wrapper.classList.remove('section-open');
+            activePane.style.overflowY = 'hidden';
 
             const toast = document.getElementById('tutorial-toast');
             if (toast) toast.classList.remove('show');
 
-            const parentSection = pane.querySelector('.inner-section.parent-cmd-open');
+            const parentSection = activePane.querySelector('.inner-section.parent-cmd-open');
             if (parentSection) parentSection.classList.remove('parent-cmd-open');
 
-            const allInventorySystems = pane.querySelectorAll('.about-inventory-system');
+            const allInventorySystems = activePane.querySelectorAll('.about-inventory-system');
             allInventorySystems.forEach(system => {
                 system.classList.remove('cmd-open');
                 system.classList.remove('skills-active');
@@ -82,23 +99,11 @@ panes.forEach(pane => {
             clearParticles();
 
             setTimeout(() => {
-                pane.scrollTop = 0;
+                activePane.scrollTop = 0;
             }, 800);
-            e.stopPropagation();
-            return;
         }
-
-        if (!pane.classList.contains('active')) {
-            panes.forEach(p => p.classList.remove('active'));
-            pane.classList.add('active');
-            wrapper.classList.add('section-open');
-
-            pane.style.overflowY = 'hidden';
-            setTimeout(() => {
-                pane.style.overflowY = 'auto';
-            }, 1000);
-        }
-    });
+        e.stopPropagation();
+    }
 });
 
 window.addEventListener('load', () => {
@@ -144,7 +149,8 @@ function typeWriter(container, textContent, folderName) {
 }
 
 document.querySelectorAll('.slot').forEach(slot => {
-    slot.addEventListener('click', function () {
+    slot.addEventListener('click', function (e) {
+        e.stopPropagation();
         const parentSection = this.closest('.inner-section');
         const parentSystem = this.closest('.about-inventory-system');
         const dialogKey = this.getAttribute('data-dialog');
@@ -242,18 +248,13 @@ function initProjectPuzzles() {
     document.querySelectorAll('.dev-pass-input').forEach(input => {
         input.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
-                const pass = this.value.trim();
-                const parentGate = this.closest('.gatekeeper-container');
-                const projectsSection = parentGate.closest('.projects');
-                if (pass === 'crearconsentido' || pass == 'crear con sentido' || pass === 'CREARCONSENTIDO' || pass == 'CREAR CON SENTIDO') {
+                const pass = this.value.trim().toLowerCase();
+                const projectsSection = this.closest('.projects');
+                if (pass === 'crearconsentido' || pass === 'crear con sentido') {
                     projectsSection.classList.add('unlocked');
-                    const targetId = projectsSection.id;
-                    setTimeout(() => {
-                        window.location.hash = "";
-                        window.location.hash = targetId;
-                    }, 50);
+                    window.location.hash = projectsSection.id;
                 } else {
-                    const error = parentGate.querySelector('.dev-error-msg');
+                    const error = this.closest('.gatekeeper-container').querySelector('.dev-error-msg');
                     if (error) {
                         error.textContent = "CONTRASEÑA ERRÓNEA. INTENTE OTRA VEZ.";
                         showTutorial();
@@ -267,43 +268,27 @@ function initProjectPuzzles() {
 
     let leverSequence = [];
     const levers = document.querySelectorAll('.lever');
-    const errorDisplay = document.getElementById('lever-error-msg');
-
     levers.forEach(lever => {
-        lever.addEventListener('click', function () {
+        lever.addEventListener('click', function (e) {
+            e.stopPropagation();
             if (this.classList.contains('active')) return;
-            if (leverSequence.length === 0 && errorDisplay) {
-                errorDisplay.textContent = "";
-                errorDisplay.classList.remove('blink-error');
-            }
             const id = this.getAttribute('data-id');
             this.classList.add('active');
             leverSequence.push(id);
             if (leverSequence.length === 3) {
-                const projectsSection = document.getElementById('projects-games');
+                const section = document.getElementById('projects-games');
                 if (leverSequence.join('') === '231') {
-                    if (errorDisplay) {
-                        errorDisplay.style.color = "var(--window-bg)";
-                        errorDisplay.textContent = "SISTEMA DESBLOQUEADO";
-                    }
-                    setTimeout(() => {
-                        projectsSection.classList.add('unlocked');
-                        setTimeout(() => {
-                            window.location.hash = "";
-                            window.location.hash = "projects-games";
-                        }, 100);
-                    }, 600);
+                    section.classList.add('unlocked');
+                    window.location.hash = "projects-games";
                 } else {
-                    if (errorDisplay) {
-                        errorDisplay.textContent = "ERROR: SECUENCIA INCORRECTA";
-                        errorDisplay.classList.add('blink-error');
+                    const err = document.getElementById('lever-error-msg');
+                    if (err) {
+                        err.textContent = "ERROR: SECUENCIA INCORRECTA";
+                        err.classList.add('blink-error');
                         showTutorial();
                     }
                     setTimeout(() => {
-                        if (errorDisplay) {
-                            errorDisplay.textContent = "";
-                            errorDisplay.classList.remove('blink-error');
-                        }
+                        if (err) { err.textContent = ""; err.classList.remove('blink-error'); }
                         levers.forEach(l => l.classList.remove('active'));
                         leverSequence = [];
                     }, 2000);
@@ -345,16 +330,8 @@ function showTutorial(message, duration = 6000) {
 
     toastMsg.textContent = customMessage;
     toast.classList.add('show');
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, duration);
+    setTimeout(() => { toast.classList.remove('show'); }, duration);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    initProjectPuzzles();
-    rotateBioQuotes();
-});
 
 document.querySelectorAll('.rpg-dialog-window').forEach(windowEl => {
     const controls = windowEl.querySelector('.cmd-controls');
@@ -363,7 +340,7 @@ document.querySelectorAll('.rpg-dialog-window').forEach(windowEl => {
             const btn = e.target;
             const parentSystem = windowEl.closest('.about-inventory-system');
             const parentSection = windowEl.closest('.inner-section');
-            if (btn.classList.contains('btn-close-x') || btn.textContent === '─' || btn.textContent === '◻') {
+            if (btn.classList.contains('btn-close-x') || btn.textContent === '×' || btn.textContent === '─' || btn.textContent === '◻') {
                 parentSystem.classList.remove('cmd-open');
                 parentSystem.classList.remove('skills-active');
                 if (parentSection) parentSection.classList.remove('parent-cmd-open');
@@ -376,8 +353,6 @@ document.querySelectorAll('.rpg-dialog-window').forEach(windowEl => {
         });
     }
 });
-
-
 
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('open-internal')) {
@@ -394,27 +369,17 @@ document.addEventListener('click', function(e) {
         const cardInfo = e.target.closest('.project-info');
         const cardTitle = cardInfo ? cardInfo.querySelector('h3').textContent : "PROYECTO";
 
-        console.log("Intentando abrir:", cardTitle);
-
         if (container && iframe) {
             if (titleSpan) titleSpan.textContent = cardTitle;
-
             iframe.src = projectUrl;
-
             container.style.display = 'block';
-
-            setTimeout(() => {
-                container.classList.add('show');
-            }, 50);
-        } else {
-            console.error("Error: No se encontró el contenedor de previsualización en el HTML.");
+            setTimeout(() => { container.classList.add('show'); }, 50);
         }
     }
 
     if (e.target.classList.contains('close-preview')) {
         const container = document.getElementById('project-preview-container');
         const iframe = document.getElementById('project-iframe');
-
         if (container) {
             container.classList.remove('show');
             setTimeout(() => {
@@ -423,4 +388,9 @@ document.addEventListener('click', function(e) {
             }, 400);
         }
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initProjectPuzzles();
+    rotateBioQuotes();
 });

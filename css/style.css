@@ -216,27 +216,6 @@
     scroll-margin-top: -150px !important;
 }
 
-.close-btn {
-    position: fixed;
-    font-size: 2.5rem;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--transicion);
-    z-index: 99999;
-    background: none; 
-    border: none;
-}
-
-.pane.active .close-btn {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.close-btn:active {
-    transform: scale(0.9);
-}
-
 @media (max-width: 768px) {
     .inner-section {
         scroll-margin-top: -100px;
@@ -716,41 +695,59 @@
     .section-header { display: flex !important; }
 }
 
+.close-btn {
+    position: fixed;
+    z-index: 999999;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 2.5rem;
+}
+
+#btn-close-games {
+    top: 30px;
+    right: 30px;
+    color: var(--blanco-pastel);
+}
+body:has(.games.active) #btn-close-games {
+    opacity: 1;
+    pointer-events: all;
+}
+
 @media (min-width: 769px) {
-    .close-btn.pc {
-        display: block; 
-        top: 30px; 
+    #btn-close-dev-pc {
+        top: 30px;
         right: 30px;
+        color: var(--verde-naturaleza);
     }
-    .close-btn.mobile {
-        display: none !important;
+    body:has(.dev.active) #btn-close-dev-pc {
+        opacity: 1;
+        pointer-events: all;
     }
+    /* Ocultamos el de mobile en PC siempre */
+    #btn-close-dev-mobile { display: none; }
 }
 
 @media (max-width: 768px) {
-    .close-btn.pc {
-        display: none !important; 
-    }
-    
-    .close-btn.mobile {
+    #btn-close-dev-mobile {
+        bottom: 20px;
+        right: 20px;
+        color: var(--verde-naturaleza);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 50px;
         height: 50px;
-        top: 20px;    
+    }
+    body:has(.dev.active) #btn-close-dev-mobile {
+        opacity: 1;
+        pointer-events: all;
+    }
+    #btn-close-games {
+        top: 20px;
         right: 20px;
     }
-
-    .games .close-btn.mobile {
-        color: var(--blanco-pastel);
-    }
-
-    .dev .close-btn.mobile {
-        top: auto;   
-        bottom: 20px;  
-        right: 20px;
-        color: var(--verde-naturaleza);
-    }
+    #btn-close-dev-pc { display: none; }
 }
 

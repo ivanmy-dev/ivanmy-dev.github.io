@@ -25,11 +25,11 @@
 }
 
 .loader-logo-svg {
+    width: 220px;
     height: auto;
     display: block;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: assemblePieces 1.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; 
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .loader-bar {
@@ -43,7 +43,6 @@
 }
 
 @media (min-width: 769px) {
-    .loader-logo-svg { width: 220px; }
     .loader-bar { width: 280px; height: 4px; }
     @keyframes load {
         0% { width: 0; opacity: 0; }
@@ -53,7 +52,10 @@
 }
 
 @media (max-width: 768px) {
-    .loader-logo-svg { width: 110px; }
+    .loader-logo-svg {
+        width: 110px !important;
+        padding: 0;
+    }
     .loader-bar { width: 130px; height: 4px; }
     @keyframes load {
         0% { width: 0; opacity: 0; }
