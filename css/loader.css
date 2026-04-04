@@ -13,23 +13,18 @@
 }
 
 .loader-logo-container {
-    perspective: 1000px;
-    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    position: relative;
-    left: 0;
-    overflow: visible;
+    min-height: 200px;
 }
 
 .loader-logo-svg {
     width: 220px;
     height: auto;
-    display: block;
+    transform-origin: center center;
     margin: 0 auto;
-    object-fit: contain;
 }
 
 .loader-bar {
@@ -53,8 +48,7 @@
 
 @media (max-width: 768px) {
     .loader-logo-svg {
-        width: 110px !important;
-        padding: 0;
+        width: 130px !important;
     }
     .loader-bar { width: 130px; height: 4px; }
     @keyframes load {
