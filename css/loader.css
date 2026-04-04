@@ -13,18 +13,23 @@
 }
 
 .loader-logo-container {
+    perspective: 1000px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 200px;
+    position: relative;
 }
 
-.loader-logo-svg {
+.loader-logo-svg { 
     width: 220px;
     height: auto;
-    transform-origin: center center;
+    display: block;
     margin: 0 auto;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: assemblePieces 1.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
 }
 
 .loader-bar {
@@ -48,7 +53,7 @@
 
 @media (max-width: 768px) {
     .loader-logo-svg {
-        width: 130px !important;
+        width: 140px !important;
     }
     .loader-bar { width: 130px; height: 4px; }
     @keyframes load {

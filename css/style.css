@@ -256,8 +256,12 @@
     }
 
     .dev .section-header-mobile {
-        bottom: 0;
+        position: fixed;
+        bottom: env(safe-area-inset-bottom, 10px); 
+        margin-bottom: 15px; 
         top: auto;
+        z-index: 10000;
+        background-color: var(--verde-naturaleza);
     }
 
     .header-nav {
