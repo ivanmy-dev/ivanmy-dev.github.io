@@ -614,58 +614,43 @@
     min-height: 300px;
 }
 
-/* ============================================================
-   BLOQUE HEADERS DEFINITIVO (UNIFICADO)
-   ============================================================ */
-
-/* 1. Estilos base y contenedores comunes */
-.section-header, 
-.section-header-pc, 
-.section-header-mobile {
+.global-header {
     position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    z-index: 10000;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
+    z-index: 10000 !important;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.6s ease;
     box-sizing: border-box;
 }
 
-/* Mostrar solo cuando el panel padre (Games o Dev) está activo */
-.pane.active .section-header,
-.pane.active .section-header-pc,
-.pane.active .section-header-mobile {
+body:has(.games.active) #header-games-global,
+body:has(.dev.active) #header-dev-pc-global,
+body:has(.dev.active) #header-dev-mobile-global {
     opacity: 1;
     pointer-events: all;
 }
 
-/* 2. Estilos de los elementos internos (Logos y Nav) */
-.header-left { 
-    display: flex; 
-    align-items: center; 
-    gap: 25px; 
-}
+#header-games-global { background-color: var(--verde-naturaleza); }
+#header-dev-pc-global, #header-dev-mobile-global { background-color: var(--blanco-pastel); }
 
-.header-logo { 
-    height: 32px; 
-    width: auto; 
-    display: block; 
-}
+#header-games-global .header-nav a { color: var(--blanco-pastel); }
+#header-dev-pc-global .header-nav a, 
+#header-dev-mobile-global .header-nav a { color: var(--verde-naturaleza); }
 
-.header-nav { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-}
+.header-left { display: flex; align-items: center; gap: 25px; }
+.header-logo { height: 32px; width: auto; display: block; }
+.header-nav { display: flex; align-items: center; gap: 15px; }
 
 .header-nav a {
     text-decoration: none;
-    color: inherit; /* Toma el color de .games o .dev automáticamente */
     font-family: var(--font-primary);
     font-size: 0.7rem;
     font-weight: 600;
@@ -674,56 +659,34 @@
     transition: opacity 0.3s ease;
 }
 
-.header-nav a:hover { 
-    opacity: 0.5; 
-}
+.header-nav a:hover { opacity: 0.5; }
 
-/* 3. Configuración específica por Sección y Pantalla */
-
-/* GAMES: Siempre arriba (PC y Mobile) */
-.games .section-header {
-    top: 0;
-    height: 60px;
-    background-color: var(--verde-naturaleza);
-}
-
-/* DEV PC: Arriba */
-@media (min-width: 769px) {
-    .section-header-pc {
-        top: 0;
-        height: 80px;
-        background-color: var(--blanco-pastel);
-        display: flex !important;
-    }
-    .section-header-mobile { display: none !important; }
-}
-
-/* DEV MOBILE: Abajo y con ajustes de color */
 @media (max-width: 768px) {
-    .section-header-pc { display: none !important; }
+    #header-dev-pc-global { display: none !important; }
     
-    .dev .section-header-mobile {
+    .global-header { padding: 0 20px; }
+
+    #header-games-global {
+        top: 0;
+        bottom: auto;
+        height: 60px;
+    }
+
+    #header-dev-mobile-global {
         bottom: 0;
-        top: auto; /* IMPORTANTE: Anula el top para fijarlo abajo */
-        height: 70px;
-        background-color: var(--blanco-pastel);
-        padding-bottom: 15px; /* Espacio de seguridad para la barra del sistema */
-        border-top: 1px solid rgba(26, 46, 38, 0.1);
-        display: flex !important;
+        top: auto;
+        padding-bottom: 25px; 
+        align-items: flex-end;
+        justify-content: space-between;
+        height: auto; 
     }
 
-    /* Forzamos el color verde para los links en el header inferior de Dev */
-    .dev .section-header-mobile .header-nav a {
-        color: var(--verde-naturaleza);
-    }
+    .header-nav a { font-size: 0.65rem; }
+    .header-logo { height: 28px; }
+}
 
-    .header-logo {
-        height: 24px;
-    }
-
-    .header-nav a { 
-        font-size: 0.65rem; 
-    }
+@media (min-width: 769px) {
+    #header-dev-mobile-global { display: none !important; }
 }
 
 .close-btn {
