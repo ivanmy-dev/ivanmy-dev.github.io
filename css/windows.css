@@ -286,6 +286,11 @@
     .about-visual {
         bottom: 880px; 
     }
+    
+    .cmd-path {
+        font-size: 0.7rem !important;
+        word-break: break-all;
+    }
 }
 
 .dialog-content { display: flex; flex-direction: column; flex-grow: 1; width: 100%; justify-content: flex-start; }

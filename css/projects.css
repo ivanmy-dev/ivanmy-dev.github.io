@@ -437,11 +437,12 @@
     padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0; 
     border: 2px solid #F5F5DC;
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
     font-family: 'Consolas', monospace;
     min-width: 300px;
+    max-width: 500px;
     
     top: 20%;
     right: 2%;
@@ -452,6 +453,8 @@
     display: flex;
     flex-direction: column;
     font-family: 'Consolas', monospace;
+    flex-grow: 1;
+    padding-right: 15px;
 }
 
 .preview-label {
@@ -474,6 +477,7 @@
     transition: transform 0.3s ease;
     border-left: 1px solid rgba(245, 245, 220, 0.3);
     padding-left: 15px;
+    margin-left: auto;
 }
 
 .close-preview:hover {
