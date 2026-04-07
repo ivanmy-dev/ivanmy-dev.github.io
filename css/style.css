@@ -614,43 +614,58 @@
     min-height: 300px;
 }
 
+/* ============================================================
+   BLOQUE HEADERS DEFINITIVO (UNIFICADO)
+   ============================================================ */
+
+/* 1. Estilos base y contenedores comunes */
 .section-header, 
 .section-header-pc, 
 .section-header-mobile {
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
-    z-index: 10000 !important;
+    padding: 0 20px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     box-sizing: border-box;
 }
 
-.games .section-header, .games .section-header-pc { background-color: var(--verde-naturaleza); }
-.dev .section-header, .dev .section-header-pc { background-color: var(--blanco-pastel); }
-
-.pane.active .section-header, 
-.pane.active .section-header-pc, 
+/* Mostrar solo cuando el panel padre (Games o Dev) está activo */
+.pane.active .section-header,
+.pane.active .section-header-pc,
 .pane.active .section-header-mobile {
     opacity: 1;
     pointer-events: all;
-    transition-delay: 0.8s;
 }
 
-.header-left { display: flex; align-items: center; gap: 25px; }
-.header-logo { height: 32px; width: auto; display: block; }
-.header-nav { display: flex; align-items: center; gap: 15px; }
+/* 2. Estilos de los elementos internos (Logos y Nav) */
+.header-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.header-logo { 
+    height: 32px; 
+    width: auto; 
+    display: block; 
+}
+
+.header-nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
 
 .header-nav a {
     text-decoration: none;
-    color: inherit;
+    color: inherit; /* Toma el color de .games o .dev automáticamente */
     font-family: var(--font-primary);
     font-size: 0.7rem;
     font-weight: 600;
@@ -659,39 +674,56 @@
     transition: opacity 0.3s ease;
 }
 
-.header-nav a:hover { opacity: 0.5; }
-
-@media (max-width: 768px) {
-    .section-header-pc { display: none !important; }
-    .section-header-mobile {
-        display: flex !important;
-        position: fixed;
-        left: 0;
-        width: 100%;
-        z-index: 10000;
-        padding: 0 20px;
-    }
-    .games .section-header-mobile {
-        top: 0;
-        bottom: auto;
-        height: 60px;
-        background-color: var(--verde-naturaleza);
-    }
-    .dev .section-header-mobile {
-        bottom: 0;
-        top: auto;
-        background-color: var(--blanco-pastel) !important;
-        padding-bottom: 25px; 
-        align-items: flex-end;
-        justify-content: space-between;
-    }
-    .header-nav a { font-size: 0.65rem; }
-    .header-logo { height: 28px; }
+.header-nav a:hover { 
+    opacity: 0.5; 
 }
 
+/* 3. Configuración específica por Sección y Pantalla */
+
+/* GAMES: Siempre arriba (PC y Mobile) */
+.games .section-header {
+    top: 0;
+    height: 60px;
+    background-color: var(--verde-naturaleza);
+}
+
+/* DEV PC: Arriba */
 @media (min-width: 769px) {
+    .section-header-pc {
+        top: 0;
+        height: 80px;
+        background-color: var(--blanco-pastel);
+        display: flex !important;
+    }
     .section-header-mobile { display: none !important; }
-    .section-header-pc { display: flex !important; }
+}
+
+/* DEV MOBILE: Abajo y con ajustes de color */
+@media (max-width: 768px) {
+    .section-header-pc { display: none !important; }
+    
+    .dev .section-header-mobile {
+        bottom: 0;
+        top: auto; /* IMPORTANTE: Anula el top para fijarlo abajo */
+        height: 70px;
+        background-color: var(--blanco-pastel);
+        padding-bottom: 15px; /* Espacio de seguridad para la barra del sistema */
+        border-top: 1px solid rgba(26, 46, 38, 0.1);
+        display: flex !important;
+    }
+
+    /* Forzamos el color verde para los links en el header inferior de Dev */
+    .dev .section-header-mobile .header-nav a {
+        color: var(--verde-naturaleza);
+    }
+
+    .header-logo {
+        height: 24px;
+    }
+
+    .header-nav a { 
+        font-size: 0.65rem; 
+    }
 }
 
 .close-btn {
